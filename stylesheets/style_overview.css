@@ -1,10 +1,14 @@
 body{
-    background-color:slategrey;
+    background-color:slategrey; 
     font-family: Cambria, Arial, sans-serif;
 }
 
 a{
     text-decoration: none;
+}
+
+code{
+    background-color: rgba(0, 0, 0, 0.322);
 }
 
 h1, h2, h3{
@@ -13,13 +17,15 @@ h1, h2, h3{
 
 #header{
     background-color: rgb(224, 120, 83);
+    /* background-color: rgba(255, 255, 255, 0.109); */
     color:floralwhite;
     text-align: center;
     padding: 10px;
 }
 
 #container{
-    background-color: rgb(132, 145, 158);
+    /* background-color: rgb(132, 145, 158); */
+    background-color: rgba(255, 255, 255, 0.109); 
     color:floralwhite;
     width: 960px;
     margin-left: auto;
@@ -32,7 +38,8 @@ h1, h2, h3{
 
 #nav{ 
      text-align: center;
-     background-color:rgb(224, 120, 83);
+     /* background-color:rgb(224, 120, 83); */
+     background-color: rgba(255, 255, 255, 0.109);
      word-spacing: 5px;
      padding: 4px;
 }
@@ -47,6 +54,74 @@ h1, h2, h3{
 .centeredOverview {
     margin: auto;
     width: 75%;
+}
+
+.centeredDescription{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 27%;
+    margin-top: 3%;
+    width: 93%;
+}
+
+#Showcase{
+    clear:both;
+    float: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    margin-top: 3%;
+    /* padding: 1% 0% 5% 0%; */
+}
+#Showcase img{
+    display: block;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1%;
+    max-width: 97%;
+    max-height: 100%;
+}
+#Showcase h3{
+    text-align: center;
+}
+#Showcase p{
+    text-align: center;
+    max-width: 97%;
+    /* margin-left: auto;
+    margin-right: auto; */
+}
+
+#DescriptionItem{
+    clear:both;
+    color:floralwhite;
+    padding: 1% 0% 5% 0%;
+    float:center;
+}
+#DescriptionImage{
+    float: left;
+    padding: 0% 3% 0% 3% ;
+}
+#DescriptionImage img{
+    width: 256px;
+    height: 256px;
+    border-radius: 3.14%;
+    border-style: ridge;
+    border-color: rgba(255, 250, 240, 0.445);
+    border-width: 1px;
+}
+#DescriptionText{
+    float:left;
+    text-align: right;
+    padding: 0% 3% 0% 3%;
+}
+#DescriptionText h3{
+    text-align: left;
+}
+#DescriptionText p{
+    text-align: left;
 }
 
 #PageDescriptor{
@@ -72,10 +147,6 @@ h1, h2, h3{
     float: left;
     padding: 0% 0% 0% 5% ;
 }
-#ImageWithLink{
-    float: left;
-    padding: 0% 0% 0% 5% ;
-}
 #VideoClip{
     float: left;
     padding: 0% 0% 0% 5% ;
@@ -89,7 +160,8 @@ h1, h2, h3{
 #footer{
     clear: both;/*clear all floating elements before displaying*/
     padding:10px;
-    background-color:rgb(224, 120, 83);
+    /* background-color:rgb(224, 120, 83); */
+    background-color: rgba(255, 255, 255, 0.109);
     color:floralwhite;
     text-align: right;
 }
