@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aki Gonzalez Portfolio</title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/style_overview.css"/>
+    </head>
+    <script src="js/Images.js"></script>
+    
+    <body>
+        <div class="CHeader">
+            <h1>Aki Gonzalez - Portfolio</h1>
+            <a href="index.html">Overview</a>
+            <a href="atTGA.html">The Game Assembly</a>
+            <!-- <a href="archive.html">Archive</a> -->
+            <a href="about.html">About</a>
+        </div>
+
+        <div class="CPageContent"><!-- Page content -->
+
+            <div class="CCenteredLargeText">
+                <p>
+                    SPITE: Bloodloss.<br>
+                    The 6th game project at The Game Assembly. The first with a custom 3D engine: IronWrought.<br>
+                    SPITE is the shared name for this project, all groups use Diablo as a reference game.<br>
+                </p>
+            </div>
+
+            <div class="CCenteredSingleDivNoBorder">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/5VBBRPEn-Tw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <div class="CCenteredSingleDiv">
+                <h3>About the project</h3>
+                <p>
+                    <br>
+                    Team: SoftBlob, 13 people (5 programmers, 3 level designers, 4 graphics artists)<br>
+                    Genre: 3D Action RPG<br>
+                    Duration: 14 weeks half time (4h/day)<br>
+                </p>
+                <p> 
+                    The first proper 3D-game I’ve been a part of developing.<br>
+                    There is a lot to consider in a 3D-game that I didn’t expect. Surprises that made the group struggle a lot.<br>
+                    The engine, IronWrought was built as the project moved along, in parallel with our 3D programming course.
+                </p>
+            </div>
+            <div class="CCenteredSingleDivNoBorder">
+                <h3>Main Contributions</h3>
+            </div>
+
+            <div class="CShown">
+                <img src="source/images/sp6/linedraw.jpg" alt="Line Drawer" id="LineInstance" onClick="SwapSource('LineInstance', 'LineFactory')">
+                <div class="CHidden">
+                    <img src="source/images/sp6/code/LineFactory.png" alt="LineFactory interface" id="LineFactory">
+                </div> 
+                <p>click image to view class interface</p>
+            </div>   
+            <div class="CCenteredSingleDiv">
+                <h3>Debug Tool: LineInstance</h3>
+                <p>
+                    Was used to draw colliders and visualize the navigation mesh.<br>
+                    Similar to how we created model. LineInstance holds the data of a Line (geometry data)<br>
+                    and a transform. The line is created in a Factory so that similar Lines are shared.
+                </p>
+            </div>
+
+ 
+            <div class="CCenteredSingleDiv">
+                <div class="CShown">
+                    <img src="source/images/sp6/modelviewer.gif" alt="Model Viewer">
+                </div>  
+                <h3>Modelviewer</h3>
+                <p>
+                    Collaboration with Emanuel Niklasson.<br>
+                    Part of the requirements for the project was to create a modelviewer/ showroom.<br>
+                    We didn’t have any GUI-library at our in the engine, instead of adding one we thought it<br>
+                    would be faster to throw something together using the console window for input.<br>
+                    Clunky but got the job done.<br>
+                    We used the std::recursive_directory_iterator to search our project directory for any<br>
+                    fbxes we then filtered the results based on the suffixes the engine used.<br>
+                    It was later also used to preview VFX:es upon request by Nicolas Risberg.
+                    <br>
+                </p>
+                <h3>Animations</h3>
+                <p>
+                    I took over the work on getting animations up and running. <br>
+                    I wrapped the existing animation controller into a component. Created a pipeline<br>
+                    for it. Spent some time debugging animations made by our graphics artist to figure<br>
+                    out why some animations didn’t work with IronWrought.
+                </p>
+            </div>
+
+            <div class="CShown">
+                <img src="source/images/sp6/code/gameobject.png" alt="Line Drawer">
+            </div>   
+            <div class="CCenteredSingleDiv">
+                <h3>Game Object and Component system</h3>
+                <p>
+                    GameObject and Component system<br>
+                    Developed with Axel Savage and Alexander Matthäi.<br>
+                    The group decided on creating and using our own component system instead of using<br>
+                    an external solution, like EnTT. Even if ours would be barebones.<br>
+                    We took inspiration from Unity for how we would want our interface to be, which<br>
+                    worked well for what we needed.
+                </p>
+            </div>
+
+        </div><!-- ! Page content -->
+
+        <div class="CFooter">
+            <a href="https://www.linkedin.com/in/aki-gonzalez-389425207"><img src="source/images/linkedin_icon.png" alt="LinkedIn Profile"></a>
+            <a href="https://github.com/Aki-Gonzalez"><img src="source/images/git_icon.png" alt="GitHub Profile"></a>
+        </div>
+
+    </body>
+</html>

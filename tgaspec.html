@@ -4,102 +4,159 @@
         <title>Aki Gonzalez Portfolio</title>
         <link rel="stylesheet" type="text/css" href="stylesheets/style_overview.css"/>
     </head>
+    <script src="js/Images.js"></script>
+    
     <body>
-        <div id="container">
-            <div id="header">
-                <h1>Aki Gonzalez</h1>
-            </div>
-            <div id="nav">
-                <a href="index.html">Overview</a>
-                <a class="selected" href="tgaspec.html">TGA-specialization</a>
-                <a href="tgasp6.html">TGA-Project6</a>
-                <a href="tgasp7.html">TGA-Project7</a>
-                <a href="contact.html">Contact</a>
-            </div>
-
-            <div class="centeredOverview" id="PageDescriptor">
-                <div id="PageDescription">
-                    <p>
-                        Specilization project.<br>
-                        At The Game Assemly we get 5 weeks of halftime to explore something that interests us.<br>
-                        I was curious about
-                    </p>
-                </div>
-            </div>
-
-            <div class="centeredOverview" id="OverviewItem">
-                <div id="ImageWithLink">
-                    <a href="tgaspec.html"><img src="source/images/placeholders/Spec_ph.jpg" alt="TGA-specialization" width="128" height="128"></a>
-                </div>
-                <div id="InfoText">
-                    <h3>TGA Specialization - Color customization</h3>
-                    <p> Tool made in engine created by project group.<br>
-                        Simple color customization tool using a tintmap.<br>
-                        Period: 5 weeks halftime.
-                    </p>
-                </div>
-            </div>
-
-            <div class="centeredOverview" id="OverviewItem">
-                <div id="ImageWithLink">
-                    <a href="tgaspec.html"><img src="source/images/placeholders/Spec_ph.jpg" alt="TGA-specialization" width="128" height="128"></a>
-                </div>
-                <div id="InfoText">
-                    <h3>TGA Specialization - Color customization</h3>
-                    <p> Tool made in engine created by project group.<br>
-                        Simple color customization tool using a tintmap.<br>
-                        Period: 5 weeks halftime.
-                    </p>
-                </div>
-            </div>
-
-            <div class="centeredOverview" id="OverviewItem">
-                <div id="ImageWithLink">
-                    <a href="tgaspec.html"><img src="source/images/placeholders/code_ph.jpg" alt="TGA-specialization" width="128" height="128"></a>
-                </div>
-                <div id="InfoText">
-                    <h3>TGA Specialization - Color customization</h3>
-                    <p> Tool made in engine created by project group.<br>
-                        Simple color customization tool using a tintmap.<br>
-                        Period: 5 weeks halftime.<br>
-                        This has a syntax error.
-                    </p>
-                </div>
-            </div>
-
-            <div class="centeredOverview" id="OverviewItem">
-                <div id="ImageWithLink">
-                    <a href="tgaspec.html"><img src="source/images/placeholders/result_ph.jpg" alt="TGA-specialization" width="128" height="128"></a>
-                </div>
-                <div id="InfoText">
-                    <h3>TGA Specialization - Color customization</h3>
-                    <p> Tool made in engine created by project group.<br>
-                        Simple color customization tool using a tintmap.<br>
-                        Period: 5 weeks halftime.<br>
-                        It still worked?
-                    </p>
-                </div>
-            </div>
-
-            <div class="centeredOverview" id="OverviewItem">
-                <div id="VideoClip">
-                    <video controls loop width="128" height="128" autoplay>
-                        <source src="source/videos/animationIssues.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div id="InfoText">
-                    <h3>TGA Specialization - Color customization</h3>
-                    <p> Tool made in engine created by project group.<br>
-                        Simple color customization tool using a tintmap.<br>
-                        Period: 5 weeks halftime.
-                    </p>
-                </div>
-            </div>
-
-            <div id="footer">
-                <a href="https://www.linkedin.com/in/aki-gonzalez-389425207"><img src="source/images/linkedin_icon.png" alt="LinkedIn Profile" width="32" height="32"></a>
-                <a href="https://github.com/Aki-Gonzalez"><img src="source/images/git_icon.png" alt="GitHub Profile" width="32" height="32"></a>
-            </div>
+        <div class="CHeader">
+            <h1>Aki Gonzalez - Portfolio</h1>
+            <a href="index.html">Overview</a>
+            <a href="atTGA.html">The Game Assembly</a>
+            <!-- <a href="archive.html">Archive</a> -->
+            <a href="about.html">About</a>
         </div>
+
+        <div class="CPageContent"><!-- Page content -->
+            <div class="CCenteredLargeText">
+                <h3>Specialization: Color customization</h3>
+                <p>
+                As part of the curriculum at The Game Assembly we had 5 weeks of half time (4h/day) to work on something that interests us. 
+                <br>For me that was color customization similar to what can be found in many games.
+                </p>
+            </div>
+
+            <div class="CShown">
+                <img src="source/images/spec/rgbw_to_albedo.gif" alt="Editor" id="Editor" onClick="SwapSource('Editor', 'EditorCode')">
+                <div class="CHidden">
+                    <img src="source/images/spec/code/editor.png" alt="Color editor code" id="EditorCode" onClick="SwapSource('Editor', 'EditorCode')">
+                </div>   
+                <p>click image to view code for the editor window</p>
+            </div>
+            <div class="CCenteredSingleDiv">
+                <h3>Introduction: Goals</h3>
+                <p> 
+                    My goals were to be able to tint a models underlying albedo map with a couple of colors that cover <br>
+                    different areas, have control over emissive and possibly to also blend in another texture. <br>
+                    An artist is to have control over which areas are to be tinted.
+                    With an editor and an orbit camera the colors and textures would be edited in-engine.<br>
+                    I wanted to make something that could be used for our upcoming game project 8 so I used<br>
+                    IronWrought, the engine my group SoftBlob created for our game projects.
+                    <br>
+                    <br>
+                    I planned 3 weeks of with goals for each day that I later estimated time for and used as tasks.<br>
+                    1st week: create a model, store colors in our model component-class, save & load using json.<br>
+                    2nd week: editor with interface using Dear ImGui, orbit camera.<br>
+                    3rd week: refactoring and improvements.<br>
+                    Fourth & fifth weeks: textures and portfolio work.<br>
+                </p>
+            </div>
+           
+            <div class="CShown">
+                <img src="source/images/spec/code/code_tintshader.png" alt="Tint map - shader code" id="TintMapShaderCode" onClick="SwapSource('TintMap', 'TintMapShaderCode')">
+                <div class="CHidden">
+                    <img src="source/images/spec/tintmap.jpg"  alt="Tint map" id="TintMap" onClick="SwapSource('TintMap', 'EditoTintMapShaderCoderCode')">
+                </div>   
+                <p>click image to view tint map represenation</p>
+            </div>
+            <div class="CCenteredSingleDiv">
+                <h3>How to control which areas are to be tinted: a tint map</h3>
+                <p> 
+                    I wasn’t sure where or how I would start. And decided that I would look for a reference game.
+                    I decided on Warframe [Digital Extremes] cause I remembered that they use tint maps. Which they thoroughly<br>
+                    explain for their Tennogen program (community created cosmetics).<br>
+                    <br>      
+                    Each channel of the tint map texture creates a mask that controls which areas are to be tinted.<br>
+                    I then lerp between the the original albedo map, textures and the colors.<br>
+                    The one that is last in the lerp-blend order becomes more prominent. I wanted the color to properly tint the texture
+                    so I placed it last, allowing me to tint a texture that is blue to be red.
+                </p>
+            </div>
+
+            <div class="CCenteredSingleDiv">
+                <div class="CShown">
+                    <img src="source/images/spec/albedo_to_texture.gif" alt="Textures">
+                </div>
+                <div class="CShown">
+                    <img src="source/images/spec/texture_to_rgbw.gif" alt="Textures To Color">
+                </div>
+            </div>
+
+            <div class="CShown">
+                <img src="source/images/spec/load.gif" alt="Load" id="Load" onClick="SwapSource('Load', 'Save')">
+                <div class="CHidden">
+                    <img src="source/images/spec/save.gif" alt="Save" id="Save" onClick="SwapSource('Load', 'Save')">
+                </div>   
+                <p>click image to swap between save and load</p>
+            </div>
+            <div class="CCenteredSingleDiv">
+                <h3>Saving and Loading</h3>
+                <p> 
+                    With IronWrought we use RapidJSON for parsing most things which works well since the files are<br> 
+                    readable outside of the editor. The serialization and deserialization is handled inside the class that<br> 
+                    holds the model-data to keep it consistent with how the rest of the components work in IronWrought.
+                </p>
+
+                <div class="CShown">
+                    <img src="source/images/spec/code/Deserialize.png" alt="Deserialization">
+                </div>
+                <p>
+                </p>
+            </div>
+
+            <div class="CShown">
+                <img src="source/images/spec/camera.gif" alt="Camera" id="Camera" onClick="SwapSource('Camera', 'CameraCode')">
+                <div class="CHidden">
+                    <img src="source/images/spec/code/camera.png" alt="Camera Code" id="CameraCode" onClick="SwapSource('Camera', 'CameraCode')">
+                </div>   
+                <p>click image to view code</p>
+            </div>
+            <div class="CCenteredSingleDiv">
+                <h3>Orbit Camera</h3>
+                <p>
+                    The camera was tricky to get how I wanted it. I used Autodesk Mayas camera behaviour as reference.<br>
+                    I underestimated the time it would take to get the camera to an acceptable working state.<br>
+                    Was alot of fun, I've wanted to create a camera like this for a while. My main struggle with it was<br>
+                    understanding spherical coordinate systems. I don't fully understand it yet but I've got a start.
+                </p>
+            </div>
+
+
+            <div class="CCenteredSingleDiv">
+                <h3>Conclusion</h3>
+                <p>
+                    I am satisfied with the results, although I feel there is a lot of room for improvent.<br>
+                    The editor does what it needs to, even if it is a bit simple.<br>
+                    I think it might have some use for the next game project<br>
+                    Dear ImGui is wonderful to work with.
+                    <br>
+                </p>
+                <h3>Next?</h3>
+                <p>
+                    I think the lack of a proper folder browser might make the editor furstrating to use.<br>
+                    Dear ImGui has no built-in folder broweser so either I download an addon or create my own. 
+                    <br>
+                    There are also optimizations that I could do for storing and handling data.<br>
+                    I should also separate the tinted model data into its own from the default model component.<br>
+                    <br>
+                </p>
+            </div>
+
+            <div class="CShown">
+                <img src="source/images/spec/final.gif" alt="Everything" id="Final" onClick="SwapSource('Final', 'Smiley')">
+                <div class="CHidden">
+                    <img src="source/images/gcSmiley.png" alt="Smiley" id="Smiley" onClick="SwapSource('Final', 'Smiley')">
+                </div>  
+            </div>
+
+            <div class="CCenteredSingleDivNoBorder">
+                <p><br></p>
+            </div>
+
+        </div><!-- ! Page content -->
+
+        <div class="CFooter">
+            <a href="https://www.linkedin.com/in/aki-gonzalez-389425207"><img src="source/images/linkedin_icon.png" alt="LinkedIn Profile"></a>
+            <a href="https://github.com/Aki-Gonzalez"><img src="source/images/git_icon.png" alt="GitHub Profile"></a>
+        </div>
+
     </body>
 </html>

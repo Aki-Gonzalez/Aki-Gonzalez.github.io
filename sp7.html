@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aki Gonzalez Portfolio</title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/style_overview.css"/>
+    </head>
+    <script src="js/Images.js"></script>
+    
+    <body>
+        <div class="CHeader">
+            <h1>Aki Gonzalez - Portfolio</h1>
+            <a href="index.html">Overview</a>
+            <a href="atTGA.html">The Game Assembly</a>
+            <!-- <a href="archive.html">Archive</a> -->
+            <a href="about.html">About</a>
+        </div>
+
+        <div class="CPageContent"><!-- Page content -->
+
+            <div class="CCenteredLargeText">
+                <p>
+                    I AM<br>
+                    The 7th game project at The Game Assembly.<br>
+                    <br>
+                    Under development<br>
+                </p>
+            </div>
+
+            <!-- <div class="CCenteredSingleDivNoBorder">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/5VBBRPEn-Tw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div> -->
+            <div class="CShown">
+                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/5VBBRPEn-Tw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                <img  src="source/images/sp7/sp7_quick.gif" alt="Project7">
+            </div>
+
+            <div class="CCenteredSingleDiv">
+                <h3>About the project</h3>
+                <p>
+                    <br> 
+                    Team: SoftBlob, 16 people (7 programmers, 4 level designers, 5 graphics artists)<br>
+                    Genre: FPX<br>
+                    Duration: 15 weeks half time (4h/day)<br>
+                </p>
+                <p> 
+                    Second game developed in IronWrought.<br>
+                    The engine has been improved upon from our last project. It now has support for PhysX, detail normals,<br>
+                    blended animations and node scripting. Reference game: Half Life 2. Visual reference: Valorant.
+                </p>
+            </div>
+            <div class="CCenteredSingleDivNoBorder">
+                <h3>Main Contributions</h3>
+            </div>
+ 
+            <div class="CShown">
+                <img src="source/images/sp7/detailnormals4png.png" alt="4 detail normals" id="4DN" onClick="SwapSource('4DN', '4DNcode')">
+                <div class="CHidden">
+                    <img src="source/images/sp7/code/detailnormals.png" alt="4 detail normals shader code" id="4DNcode">
+                </div>   
+                <p>click image to swap to shader code<br><br><br></p>
+            </div>
+            <div class="CCenteredSingleDiv">
+                <div class="CShown">
+                    <video autoplay loop>
+                        <source src="source/images/sp7/detailnormals.mp4" type="video/mp4">
+                    </video>
+                </div>  
+                <h3>Detail Normals</h3>
+                <p>
+                    Developed with Haqvin Bager.<br>
+                    Provided with guidance from The Game Assembly. We went through their modelviewer<br>
+                    code to figure out how to proceed. The normals are supposed to blend into the underlying<br>
+                    normal map based on proximity from the camera.<br>
+                    <code>
+                        float strengthMultiplier = 0.0f;<br>
+                        float dist = distance(eyePos, vertWorldPos);<br>
+                        strengthMultiplier = clamp((1.0f / (dist * dist)), 0.0f, DETAILNORMAL_DISTANCE_MAX);
+                    </code>
+                    Additionally, a material should be able to use 4 different detail normals.<br>
+                    Which normal to use where is determined using the opacity of the material maps alpha channel<br>
+                    <br>
+                    This was a requirment for the project; every group has some variation of it.<br>
+                    I mostly included it here cause I thought it was really cool.
+                    <br>
+                </p>
+            </div>
+
+            <div class="CShown">
+                <div class="CShown">
+                    <video autoplay loop>
+                        <source src="source/images/sp7/robot_anim_issues.mp4" type="video/mp4">
+                    </video>
+                </div>  
+                <p>Not working as intended</p>
+            </div>   
+            <div class="CCenteredSingleDiv">
+                <h3>Blended Animations</h3>
+                <p>
+                    In the previous project there were some issues getting blended animations<br>
+                    to work properly (because of lack of understanding from my part).<br>
+                    This project I got it up and running.<br>
+                    The system allows for blending between 2 animations or playing a single animation.<br>
+                    We had some issues when we upgraded our asset importer which gave some funny results.<br>
+                    <br>
+                    It was tricky to figure out that it was an issue within the importer. I dug around inside <br>
+                    of the controller to find the root cause with no luck, with some help from other programmers<br>
+                    we tried with later versions of fbx:es. Which seemed to work, for the most part.<br>
+                    Rotations were incorrect when a skeleton had its joints oriented so as not facing the <br>
+                    same direction as world space. After some attempts to resololve this myself I decided to <br>
+                    change the importer we used. Asked for some advice on how to use CMake and now it works fine.<br>
+                </p>
+            </div>
+ 
+            <div class="CCenteredSingleDiv">
+                <h3>Minor Contributions</h3>
+                <p>
+                    Player Crouch.<br>
+                    Player: game object hierarchy.<br>
+                </p>
+                <h3>Assisted On</h3>
+                <p>
+                    Implementing deferred renderering.<br>
+                    VFX System changes.<br>
+                    Node editor<br>
+                    UI Menu expansion: widget support (sub menus)<br>
+                </p>
+            </div>
+
+        </div><!-- ! Page content -->
+
+        <div class="CFooter">
+            <a href="https://www.linkedin.com/in/aki-gonzalez-389425207"><img src="source/images/linkedin_icon.png" alt="LinkedIn Profile"></a>
+            <a href="https://github.com/Aki-Gonzalez"><img src="source/images/git_icon.png" alt="GitHub Profile"></a>
+        </div>
+
+    </body>
+</html>
