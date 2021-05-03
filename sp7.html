@@ -18,12 +18,9 @@
         <div class="CPageContent"><!-- Page content -->
 
             <div class="CCenteredLargeText">
-                <p>
-                    I AM<br>
-                    The 7th game project at The Game Assembly.<br>
-                    <br>
-                    Under development<br>
-                </p>
+                <h2>
+                    I AM
+                </h2>
             </div>
 
             <!-- <div class="CCenteredSingleDivNoBorder">
@@ -35,23 +32,29 @@
             </div>
 
             <div class="CCenteredSingleDiv">
-                <h3>About the project</h3>
-                <p>
-                    <br> 
-                    Team: SoftBlob, 16 people (7 programmers, 4 level designers, 5 graphics artists)<br>
-                    Genre: FPX<br>
-                    Duration: 16 weeks half time<br>
-                    Languages: C++, HLSL<br>
-                    Graphics API: DirectX11<br>
-                </p>
-                <p> 
-                    Second game developed in IronWrought.<br>
-                    The engine has been improved upon from our last project. It now has support for PhysX, detail normals,<br>
-                    blended animations and node scripting. Reference game: Half Life 2. Visual reference: Valorant.
-                </p>
-            </div>
-            <div class="CCenteredSingleDivNoBorder">
-                <h3>Contributions</h3>
+                <ul>
+                    Specifications:
+                    <li>Team:     <a href="softblob.html">SoftBlob Studios</a>, 16 members </li>
+                    <li>Engine:   IronWrought [C++][DirectX11] (Engine developed by SoftBlob Studios)</li>
+                    <li>Duration: 16 weeks half-time (4h/day)</li>
+                    <li>Genre:    FPX</li>
+                </ul>
+                <br>
+                <ul>
+                    Main Contributions:
+                    <li>Blended Animations System</li>
+                </ul>
+                <br>
+                <ul>
+                    Assisted with:
+                    <li>Player: Crouch, Movement, GameObject-hierarchy, Health</li>
+                    <li>UI: Expansion of Menus, Adding Widget Support</li>
+                    <li>Node Editor</li>
+                    <li>VFX System Improvements</li>
+                    <li>Implementation of Deferred Rendering</li>
+                    <li>Detail Normals</li>
+                </ul>
+                <p></p>
             </div>
  
             <div class="CShown">
@@ -84,48 +87,6 @@
                     This was a requirment for the project; every group has some variation of it.<br>
                     I mostly included it here cause I thought it was really cool.
                     <br>
-                </p>
-            </div>
-
-            <!-- <div class="CShown">
-                <div class="CShown">
-                    <video autoplay loop>
-                        <source src="source/images/sp7/robot_anim_issues.mp4" type="video/mp4">
-                    </video>
-                </div>  
-                <p>Not working as intended</p>
-            </div>   
-            <div class="CCenteredSingleDiv">
-                <h3>Blended Animations</h3>
-                <p>
-                    In the previous project there were some issues getting blended animations<br>
-                    to work properly (because of lack of understanding from my part).<br>
-                    This project I got it up and running.<br>
-                    The system allows for blending between 2 animations or playing a single animation.<br>
-                    We had some issues when we upgraded our asset importer which gave some funny results.<br>
-                    <br>
-                    It was tricky to figure out that it was an issue within the importer. I dug around inside <br>
-                    of the controller to find the root cause with no luck, with some help from other programmers<br>
-                    we tried with later versions of fbx:es. Which seemed to work, for the most part.<br>
-                    Rotations were incorrect when a skeleton had its joints oriented so as not facing the <br>
-                    same direction as world space. After some attempts to resololve this myself I decided to <br>
-                    change the importer we used. Asked for some advice on how to use CMake and now it works fine.<br>
-                </p>
-            </div> -->
- 
-            <div class="CCenteredSingleDiv">
-                <h3></h3>
-                <p>
-                    Player Crouch.<br>
-                    Player: game object hierarchy.<br>
-                    Blended animations: blending of 2 animations.<br>
-                </p>
-                <h3>Assisted On</h3>
-                <p>
-                    Implementing deferred renderering.<br>
-                    VFX System changes.<br>
-                    Node editor<br>
-                    UI Menu expansion: widget support (sub menus)<br>
                 </p>
             </div>
 

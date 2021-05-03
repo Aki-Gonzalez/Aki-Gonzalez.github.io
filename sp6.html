@@ -18,11 +18,9 @@
         <div class="CPageContent"><!-- Page content -->
 
             <div class="CCenteredLargeText">
-                <p>
-                    SPITE: Bloodloss.<br>
-                    The 6th game project at The Game Assembly. The first with a custom 3D engine: IronWrought.<br>
-                    SPITE is the shared name for this project, all groups use Diablo as a reference game.<br>
-                </p>
+                <h2>
+                    SPITE: Bloodloss
+                </h2>
             </div>
 
             <div class="CCenteredSingleDivNoBorder">
@@ -30,24 +28,32 @@
             </div>
 
             <div class="CCenteredSingleDiv">
-                <h3>About the project</h3>
-                <p>
-                    <br>
-                    Team: SoftBlob, 13 people (5 programmers, 3 level designers, 4 graphics artists)<br>
-                    Genre: 3D Action RPG<br>
-                    Duration: 14 weeks half time<br>
-                    Languages: C++, HLSL, C#<br>
-                    Graphics API: DirectX11<br>
-                </p>
-                <p> 
-                    The first proper 3D-game I’ve been a part of developing.<br>
-                    There is a lot to consider in a 3D-game that I didn’t expect. Surprises that made the group struggle a lot.<br>
-                    The engine, IronWrought was built as the project moved along, in parallel with our 3D programming course.
-                </p>
+                <ul>
+                    Specifications:
+                    <li>Team:     <a href="softblob.html">SoftBlob Studios</a>, 13 members </li>
+                    <li>Engine:   IronWrought [C++][DirectX11] (Engine developed by SoftBlob Studios)</li>
+                    <li>Duration: 14 weeks half-time (4h/day)</li>
+                    <li>Genre:    Action RPG</li>
+                </ul>
+                <br>
+                <ul>
+                    Main Contributions:
+                    <li>Debug Tool: Line Drawer</li>
+                    <li>Modelviewer</li>
+                    <li>GameObject and Component System</li>
+                </ul>
+                <br>
+                <ul>
+                    Assisted with:
+                    <li>Animations and Animation Pipeline</li>
+                    <li>Enemies and Player Abilities Collision</li>
+                </ul>
+                <p></p>
             </div>
-            <div class="CCenteredSingleDivNoBorder">
+
+            <!-- <div class="CCenteredSingleDivNoBorder">
                 <h3>Main Contributions</h3>
-            </div>
+            </div> -->
 
             <div class="CShown">
                 <img src="source/images/sp6/linedraw.jpg" alt="Line Drawer" id="LineInstance" onClick="SwapSource('LineInstance', 'LineFactory')">
@@ -57,7 +63,7 @@
                 <p>click image to view class interface</p>
             </div>   
             <div class="CCenteredSingleDiv">
-                <h3>Debug Tool: LineInstance</h3>
+                <h3>Debug Tool: Line Drawer</h3>
                 <p>
                     Was used to draw colliders and visualize the navigation mesh.<br>
                     Similar to how we created model. LineInstance holds the data of a Line (geometry data)<br>
@@ -65,11 +71,10 @@
                 </p>
             </div>
 
- 
+            <div class="CShown">
+                <img src="source/images/sp6/modelviewer.gif" alt="Model Viewer">
+            </div> 
             <div class="CCenteredSingleDiv">
-                <div class="CShown">
-                    <img src="source/images/sp6/modelviewer.gif" alt="Model Viewer">
-                </div>  
                 <h3>Modelviewer</h3>
                 <p>
                     Collaboration with Emanuel Niklasson.<br>
@@ -82,20 +87,13 @@
                     It was later also used to preview VFX:es upon request by Nicolas Risberg.
                     <br>
                 </p>
-                <h3>Animations</h3>
-                <p>
-                    I took over the work on getting animations up and running. <br>
-                    I wrapped the existing animation controller into a component. Created a pipeline<br>
-                    for it. Spent some time debugging animations made by our graphics artist to figure<br>
-                    out why some animations didn’t work with IronWrought.
-                </p>
             </div>
 
             <div class="CShown">
                 <img src="source/images/sp6/code/gameobject.png" alt="Line Drawer">
             </div>   
             <div class="CCenteredSingleDiv">
-                <h3>Game Object and Component system</h3>
+                <h3>Game Object and Component System</h3>
                 <p>
                     GameObject and Component system<br>
                     Developed with Axel Savage and Alexander Matthäi.<br>

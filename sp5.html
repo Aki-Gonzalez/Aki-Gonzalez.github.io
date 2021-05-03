@@ -5,117 +5,104 @@
         <link rel="stylesheet" type="text/css" href="stylesheets/style_overview.css"/>
     </head>
     <script src="js/Images.js"></script>
-    <!-- <script language="javascript">
-        function SwapSource(first, second) {
-            document.get
-            var temp = document.getElementById(first).src;
-            document.getElementById(first).src = document.getElementById(second).src;
-            document.getElementById(second).src = temp;
-        }
-    </script> -->
     
     <body>
         <div class="CHeader">
             <h1>Aki Gonzalez - Portfolio</h1>
             <a href="index.html">Overview</a>
-            <a class="CSelected" href="projects.html">Projects</a>
-            <a href="archive.html">Archive</a>
+            <a href="projects.html">Projects</a>
+            <!-- <a href="archive.html">Archive</a> -->
             <a href="about.html">About</a>
         </div>
 
         <div class="CPageContent"><!-- Page content -->
 
             <div class="CCenteredLargeText">
-                <p>
-                    Generalist programmer.<br>
-                    Short overview of my recent projects.
-                </p>
+                <h2>
+                    Ellah
+                </h2>
             </div>
 
-            <div class="CCenteredTwoDivs">
-                <div class="CTwoDivsLeftAligned">
-                   <!-- <img src="source/images/placeholders/orchid2.jpg" alt="TGA-specialization" > -->
-                   <a href="tgaspec.html"><img src="source/images/placeholders/Spec_ph.jpg" alt="TGA-specialization"></a>
-                </div>
-                <div class="CTwoDivsRightAligned">
-                    <h3>TGA Specialization - Color customization</h3>
-                    <p> 
-                        <br>
-                        Tool made in engine created by project group.<br>
-                        Simple color customization tool using a tintmap.<br>
-                        <br>
-                        Period: 5 weeks halftime.
-                        <br>
-                        Tool made in engine created by project group.<br>
-                        Simple color customization tool using a tintmap.<br>
-                        <br>
-                        Period: 5 weeks halftime.
-                        <br>
-                        Tool made in engine created by project group.<br>
-                        Simple color customization tool using a tintmap.<br>
-                        <br>
-                        Period: 5 weeks halftime.
-                    </p>
-                </div>
+            <div class="CCenteredSingleDivNoBorder">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/URmdP2C9fW0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
 
             <div class="CCenteredSingleDiv">
-                <img src="source/images/placeholders/orchid_W_XL.jpg" alt="TGA-specialization" >
-                <h3>Description of image or something</h3>
-                <p> 12345678910121416182022242628303234363840424446485052545658606264666870727476788082848646668707274767880828486<br>
-                    1234567891012141618202224262830323436384042444648505<br>
-                    1234567891012141618202224262830323436384042444<br>
-                    12345678910121416182022242628303234363840<br>
-                    1234567891012141618202224262830323438<br>
-                    This is not perfectly centered >:/<br>
-                    <code>std::cout << "Hello, Reader :)!" << std::endl;</code><br>
-                    12345678910121416182022242628303234363840424446485052545658<br>
-                    12345678910121416182022242628303234363840424446485052545658<br>
-                    12345678910121416182022242628303234363840424446485052545658<br>
-                    123456789101214161820222426283032343638404244464850525456586062646668707274767880828486aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                    12345678910121416182022242628303234363840424446485052545658
+                <!-- <h3>About the project</h3> -->
+                <ul>
+                    Specifications:
+                    <li>Team:     Diamond Eyes Studios, 12 members </li>
+                    <li>Engine:   TGA2D [C++] (Engine developed by The Game Assembly)</li>
+                    <li>Duration: 8 weeks half-time (4h/day)</li>
+                    <li>Genre:    Top-Down Adventure Puzzler</li>
+                </ul>
+                <br>
+                <ul>
+                    Main Contributions:
+                    <li>Doors, Gates and Pressure Plates</li>
+                    <li>Map Transitions</li>
+                    <li>Menus: Main, Level Select, Credits, Settings and Pause</li>
+                </ul>
+                <p></p>
+            </div>
+
+            <div class="CShown">
+                <img src="source/images/sp5/door_pressureplate.gif" alt="Door and Pressure plate" id="LineInstance" onClick="SwapSource('', '')">
+                <!-- <div class="CHidden">
+                    <img src="source/images/sp6/code/LineFactory.png" alt="LineFactory interface" id="LineFactory">
+                </div> 
+                <p>click image to view class interface</p> -->
+            </div> 
+            <div class="CShown">
+                <img src="source/images/sp5/gate.gif" alt="Line Drawer" id="Gate" >
+            </div>  
+            <div class="CCenteredSingleDiv">
+                <h3>Doors, Gates and Pressure Plates</h3>
+                <p>
+                    The puzzles in Ellah were composed of <i>locks</i> and <i>keys</i>. The 2 locks that we had were doors and gates.
+                    Aside from their visual representation being different gates could be locked by scrolls, our story progression items. <br>
+                    For the project the team used <a href="https://www.mapeditor.org/">Tiled</a> as our level-editor. We used Tiled's <i>templates</i>
+                    to bind data to a sprite that we would turn into a <i>GameObject</i> with <i>Components</i>.<br>
+                    <br>
+                    Doors, gates and pressure plates were all Components. From Tiled a door or gate were given an UID (unique id) and how many keys it needed to unlock itself. 
+                    <a href="https://www.alexander-matthai.com/">Alexander Matthäi</a> added the support for gates to check for how many scrolls the player had and how many were needed for it to unlock.<br> 
+                    Pressure plates only held which UID they were connected to. On collision with another GameObject, pressure plates checked if the collided
+                    object was the player or a movable block: toggling a flag to change its state. 
+                    To connect the locks and keys I used our <i>PostMaster</i>: doors and gates were <I>Observers</I> that received the state of pressure plates (and other keys)
+                    through messages once a state was toggled.
                 </p>
             </div>
 
             <div class="CShown">
-                <img src="source/images/placeholders/spec/giftest.gif" alt="TGA-specialization" id="Shown" onClick="SwapSource('Shown', 'Hidden')">
-                <div class="CHidden">
-                    <img src="source/images/placeholders/spec/code_tintshader.png" alt="TGA-specialization" id="Hidden" onClick="SwapSource('Shown', 'Hidden')">
-                </div>   
-                <p>click image to view code</p>
-            </div>
+                <img src="source/images/sp5/map_transition.gif" alt="Map Transition">
+            </div>  
             <div class="CCenteredSingleDiv">
-                <h3>Description of image or something</h3>
-                <p> 12345678910121416182022242628303234363840424446485052545658606264666870727476788082848646668707274767880828486<br>
-                    1234567891012141618202224262830323436384042444648505<br>
-                    1234567891012141618202224262830323436384042444<br>
-                    12345678910121416182022242628303234363840<br>
-                    1234567891012141618202224262830323438<br>
-                    This is not perfectly centered >:/<br>
-                    <code>std::cout << "Hello, Reader :)!" << std::endl;</code><br>
-                    12345678910121416182022242628303234363840424446485052545658<br>
-                    12345678910121416182022242628303234363840424446485052545658<br>
-                    12345678910121416182022242628303234363840424446485052545658<br>
-                    123456789101214161820222426283032343638404244464850525456586062646668707274767880828486aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                    12345678910121416182022242628303234363840424446485052545658
+                <h3>Map Transition</h3>
+                <p>
+                   Ellah consisted of a hub world which connected to 4 dungeons, each their own map.<br>
+                   Created in Tiled as a template, the map transition was a Component that held the name of the level it connected to.
+                   Because it was odd for the player to enter a dungeon and upon exiting being returned to the beginning of the hub world I added a position to be stored in the component.
+                   This position was set by the level designers in Tiled as it gave the safest results.
+                   <br>
+                   On collision with the player a message was sent using the PostMaster with a string containing the name for the level to load, the position was stored in our global state singelton.
                 </p>
             </div>
 
+            <div class="CShown">
+                <img src="source/images/sp5/level_select.gif" alt="Level Select">
+            </div>   
             <div class="CCenteredSingleDiv">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/5VBBRPEn-Tw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <h3>Description of image or something</h3>
-                <p> 12345678910121416182022242628303234363840424446485052545658606264666870727476788082848646668707274767880828486<br>
-                    1234567891012141618202224262830323436384042444648505<br>
-                    1234567891012141618202224262830323436384042444<br>
-                    12345678910121416182022242628303234363840<br>
-                    1234567891012141618202224262830323438<br>
-                    This is not perfectly centered >:/<br>
-                    <code>std::cout << "Hello, Reader :)!" << std::endl;</code><br>
-                    12345678910121416182022242628303234363840424446485052545658<br>
-                    12345678910121416182022242628303234363840424446485052545658<br>
-                    12345678910121416182022242628303234363840424446485052545658<br>
-                    123456789101214161820222426283032343638404244464850525456586062646668707274767880828486aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                    12345678910121416182022242628303234363840424446485052545658
+                <h3>Menus - Level Select</h3>
+                <p>
+                    All menus were setup the in similar fashion with the arrow keys to cycle the options in the menu and return to select.
+                    Since Ellah was played only using the keyboard this style of navigation felt like a good fit.
+                    The menu items consisted of Tga2D CText elements held in an array. The arrow keys incremented and decremented an index that was used to select for the selection.
+                    All menus were <i>States</i> that were part of our <i>StateStack</i> that <a href="https://www.joakimgunnari.com/">Joakim Gunnari</a> and I setup.
+                    <br>
+                    <br>
+                    With the level select menu the selected index was used to fetch a string from a separate array which held the name of a level, the string was passed to a <i>LevelLoadState</i> 
+                    that was pushed to be the active state as the <i>LevelSelectState</i> was popped.<br>
+                    I also created a debug level select in the same menu that used W and S to navigate instead and a std::vector so that it could hold any number of levels.
                 </p>
             </div>
 

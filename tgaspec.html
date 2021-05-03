@@ -17,13 +17,7 @@
 
         <div class="CPageContent"><!-- Page content -->
             <div class="CCenteredLargeText">
-                <h3>Specialization: Color customization</h3>
-                <p>
-                As part of the curriculum at The Game Assembly we got to work on something that interests us. 
-                For me that was color customization similar to what can be found in many games.
-                <br>
-                Languages: C++, HLSL. Graphics API: DirectX11 - 5 weeks half time.
-                </p>
+                <h2>Specialization: Color customization</h2>
             </div>
 
             <div class="CShown">
@@ -33,9 +27,19 @@
                 </div>   
                 <p>click image to view code for the editor window</p>
             </div>
+
             <div class="CCenteredSingleDiv">
+                <ul>
+                    Specifications:
+                    <li>Engine:   IronWrought [C++][DirectX11] (Engine developed by <a href="softblob.html">SoftBlob Studios</a>)</li>
+                    <li>Duration: 5 weeks half-time (4h/day)</li>
+                </ul>
+                <br>
                 <h3>Introduction: Goals</h3>
                 <p> 
+                    As part of the curriculum at The Game Assembly we got to work on something that interests us. 
+                    For me that was color customization similar to what can be found in many games.
+                    <br>
                     My goals were to be able to tint a models underlying albedo map with a couple of colors that cover
                     different areas, have control over emissive and possibly to also blend in another texture.
                     An artist is to have control over which areas are to be tinted.
@@ -139,6 +143,10 @@
                     There are also optimizations that I could do for storing and handling data.
                     I should also separate the tinted model data into its own from the default model component.
                     <br>
+                    HSV for blending colors instead of RGB.<br>
+                    Separating the tint map from the FBX so that it is part of the customization json.<br>
+                    Creating in-game UI.<br>
+
                 </p>
             </div>
 
