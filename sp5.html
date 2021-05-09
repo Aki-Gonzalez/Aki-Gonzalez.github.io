@@ -64,11 +64,11 @@
                     For the project the team used <a href="https://www.mapeditor.org/">Tiled</a> as our level-editor. We used Tiled's <i>templates</i>
                     to bind data to a sprite that we would turn into a <i>GameObject</i> with <i>Components</i>.<br>
                     <br>
-                    Doors, gates and pressure plates were all Components. From Tiled a door or gate were given an UID (unique id) and how many keys it needed to unlock itself. 
+                    Doors, gates and pressure plates were all Components. From Tiled a door or gate were given an UID (unique id) and how many keys it needed to be unlocked. 
                     <a href="https://www.alexander-matthai.com/">Alexander Matthäi</a> added the support for gates to check for how many scrolls the player had and how many were needed for it to unlock.<br> 
                     Pressure plates only held which UID they were connected to. On collision with another GameObject, pressure plates checked if the collided
-                    object was the player or a movable block: toggling a flag to change its state. 
-                    To connect the locks and keys I used our <i>PostMaster</i>: doors and gates were <I>Observers</I> that received the state of pressure plates (and other keys)
+                    object was the player or a movable block then toggling a flag to change its state. 
+                    To connect the locks and keys I used our <i>PostMaster</i>: doors and gates were <i>Observers</i> that received the state of pressure plates (and other keys)
                     through messages once a state was toggled.
                 </p>
             </div>
@@ -84,7 +84,7 @@
                    Because it was odd for the player to enter a dungeon and upon exiting being returned to the beginning of the hub world I added a position to be stored in the component.
                    This position was set by the level designers in Tiled as it gave the safest results.
                    <br>
-                   On collision with the player a message was sent using the PostMaster with a string containing the name for the level to load, the position was stored in our global state singelton.
+                   On collision with the player a message was sent using the PostMaster with a string containing the name for the level to load and the return position was stored in our global state singelton.
                 </p>
             </div>
 
@@ -94,9 +94,9 @@
             <div class="CCenteredSingleDiv">
                 <h3>Menus - Level Select</h3>
                 <p>
-                    All menus were setup the in similar fashion with the arrow keys to cycle the options in the menu and return to select.
+                    All menus were setup in similar fashion with the arrow keys to cycle the options in the menu and return to select an option.
                     Since Ellah was played only using the keyboard this style of navigation felt like a good fit.
-                    The menu items consisted of Tga2D CText elements held in an array. The arrow keys incremented and decremented an index that was used to select for the selection.
+                    The menu items consisted of Tga2D CText elements held in an array. The arrow keys incremented and decremented the index that was used for selection.
                     All menus were <i>States</i> that were part of our <i>StateStack</i> that <a href="https://www.joakimgunnari.com/">Joakim Gunnari</a> and I setup.
                     <br>
                     <br>

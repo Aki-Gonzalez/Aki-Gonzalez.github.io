@@ -28,7 +28,7 @@
             </div> -->
             <div class="CShown">
                 <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/5VBBRPEn-Tw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-                <img  src="source/images/sp7/sp7_quick.gif" alt="Project7">
+                <img  src="source/images/sp7/IAM_Logo.png" alt="Project7">
             </div>
 
             <div class="CCenteredSingleDiv">
@@ -47,46 +47,65 @@
                 <br>
                 <ul>
                     Assisted with:
-                    <li>Player: Crouch, Movement, GameObject-hierarchy, Health</li>
-                    <li>UI: Expansion of Menus, Adding Widget Support</li>
-                    <li>Node Editor</li>
-                    <li>VFX System Improvements</li>
+                    <li>Player: Crouch, Health Regeneration</li>
                     <li>Implementation of Deferred Rendering</li>
+                    <li>Widget Support for UI System</li>
+                    <li>Node Editor</li>
+                    <li>VFX System Changes</li>
                     <li>Detail Normals</li>
                 </ul>
                 <p></p>
             </div>
- 
+            
             <div class="CShown">
-                <img src="source/images/sp7/detailnormals4png.png" alt="4 detail normals" id="4DN" onClick="SwapSource('4DN', '4DNcode')">
-                <div class="CHidden">
-                    <img src="source/images/sp7/code/detailnormals.png" alt="4 detail normals shader code" id="4DNcode">
-                </div>   
-                <p>click image to swap to shader code<br><br><br></p>
-            </div>
+                <img src="source/images/sp7/glove_animations.gif" alt="Glove Animations" id="Glove" onClick="SwapSource('Glove', 'Glove')">
+            </div>   
             <div class="CCenteredSingleDiv">
-                <div class="CShown">
-                    <video autoplay loop>
-                        <source src="source/images/sp7/detailnormals.mp4" type="video/mp4">
-                    </video>
-                </div>  
-                <h3>Detail Normals</h3>
+                <h3>Blended Animations System</h3>
                 <p>
-                    Developed with Haqvin Bager.<br>
-                    Provided with guidance from The Game Assembly. We went through their modelviewer<br>
-                    code to figure out how to proceed. The normals are supposed to blend into the underlying<br>
-                    normal map based on proximity from the camera.<br>
-                    <code>
-                        float strengthMultiplier = 0.0f;<br>
-                        float dist = distance(eyePos, vertWorldPos);<br>
-                        strengthMultiplier = clamp((1.0f / (dist * dist)), 0.0f, DETAILNORMAL_DISTANCE_MAX);
-                    </code>
-                    Additionally, a material should be able to use 4 different detail normals.<br>
-                    Which normal to use where is determined using the opacity of the material maps alpha channel<br>
-                    <br>
-                    This was a requirment for the project; every group has some variation of it.<br>
-                    I mostly included it here cause I thought it was really cool.
-                    <br>
+                    Blends between 2 animations at a time.<br>
+                    I made some minor changes to the system from our previous project (SPITE: Bloodloss) as well as making sure it worked with our deferred renderer. I then got it setup to work with the player and the enemies.
+                    <br><br>
+                    With the some of the graphics artist I sat and worked out what could be done with the system and on some ideas for the blending between animations as well as figuring out some issues with the system.
+                    <br><br>
+                    For the player I made a Component that holds some states and adjusts animations based on those states, a light-weight state machine. Function calls from other components toggled these states.
+                    The blending of the animation is done by lerping, primarily used for the pull function of the gravity glove where the distance of the object to the glove was used to change the animation.
+                    Example in the gif above.
+                    <br><br>
+                    The enemies all share a central controller that receives which state an enemy is in and a desired animation using our PostMaster-event system.
+                </p>
+            </div>
+
+            <div class="CShown">
+                <img src="source/images/sp7/sp7_quick.gif" alt="Glove Animations" id="Glove" onClick="SwapSource('Glove', 'Glove')">
+            </div>
+            <div class="CShown">
+                <img src="source/images/sp7/menus.gif" alt="Glove Animations" id="Glove" onClick="SwapSource('Glove', 'Glove')">
+            </div> 
+            <div class="CCenteredSingleDiv">
+                <h3>Assisted With</h3>
+                <p>
+                    Player<br>
+                    I along with a couple of others in the team worked on the player. Main contributions were crouch and health regeneration. Crouch is toggled on CTRL and works by resizing the collider, lowering the collider and the movement speed.
+                    Health regeneration triggers after a couple of seconds and regenerates x% per second until the player has taken damage or health is maxed out. Also tweaked movement and fixed a couple of bugs.
+                    <br><br>
+                    Deferred Rendering<br>
+                    I worked together with <a href="https://haqvinbager.github.io/">Haqvin Bager</a> and <a href="https://nicolas-risberg.github.io/">Nicolas Risberg</a> to move IronWrought from using a forward renderer to a deferred renderer.
+                    <br><br>
+                    Widget Support for UI System<br>
+                    I setup the menus and related states and together with <b>Nicolas Risberg</b> worked out the idea of widgets for our menus to support the concept created by our artists.<br>
+                    IronWrought has a class: <i>CCanvas</i> which is used for UI. It holds sprites, buttons, text and more. Widgets were originally intended to be its own class but required the same functionality as CCanvas and so what are called widgets are 
+                    any number of CCanvas helb by another, main, CCanvas.
+                    <br><br>
+                    Node Editor<br>
+                    I helped <b>Haqvin Bager</b> with the <a href="https://haqvinbager.github.io/I_Am.html">node editor</a> on a couple of bugs and some optimizations.
+                    <br><br>
+                    VFX System Changes<br>
+                    For I AM the team wanted to expand our vfx system and creating an <a href="https://nicolas-risberg.github.io/2021-03-30/vfx-editor.html">editor</a> for the system was on the graphics artists' wishlist. Together with <b>Nicolas Risberg</b> we moved particles and 
+                    vfx-meshes into a single Component to create the base for the editor to work on. We added support for the particle emitters and vfx-meshes to rotate and translate in relation to the transform of the GameObject and each other. 
+                    <br><br>
+                    Detail Normals<br>
+                    <b>Haqvin Bager</b> and I setup support for detail normals in IronWrought. Based on the cameras distance to an object up to 4 different normal maps can be blended into a models material to allow for more detail and variation.
                 </p>
             </div>
 

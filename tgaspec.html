@@ -17,7 +17,7 @@
 
         <div class="CPageContent"><!-- Page content -->
             <div class="CCenteredLargeText">
-                <h2>Specialization: Color customization</h2>
+                <h2>Color Customization Tool</h2>
             </div>
 
             <div class="CShown">
@@ -37,22 +37,30 @@
                 <br>
                 <h3>Introduction: Goals</h3>
                 <p> 
-                    As part of the curriculum at The Game Assembly we got to work on something that interests us. 
-                    For me that was color customization similar to what can be found in many games.
-                    <br>
-                    My goals were to be able to tint a models underlying albedo map with a couple of colors that cover
-                    different areas, have control over emissive and possibly to also blend in another texture.
-                    An artist is to have control over which areas are to be tinted.
-                    With an editor and an orbit camera the colors and textures would be edited in-engine.
-                    I wanted to make something that could be used for our upcoming game project 8 so I used
-                    IronWrought, the engine my group SoftBlob created for our game projects.
-                    <br>
-                    <br>
-                    I planned 3 weeks of with goals for each day that I later estimated time for and used as tasks.
-                    1st week: create a model, store colors in our model component-class, save & load using json.
-                    2nd week: editor with interface using Dear ImGui, orbit camera.
-                    3rd week: refactoring and improvements.
-                    Fourth & fifth weeks: textures and portfolio work.
+                    As part of the curriculum for game programmers at The Game Assembly we had a specialization course, where we could work on anything that might interest us. 
+                    I was curious about in-game customization. I figured the in-game part might be out of scope for the time I had so I reworked my idea to a engine intergrated tool.
+                    As a tool made in IronWrought I also hope it will come to use in the final project.                          
+                </p>
+                <ul>
+                    Main Goals:
+                    <li>Tint a models underlying albedo map with a couple of colors that cover different areas</li>
+                    <li>Control of emissive</li>
+                    <li>Editor using ImGui with camera controls similar to Autodesk Maya</li>
+                </ul>
+                <br>
+                <ul>
+                    Secondary Goals:
+                    <li>Allow for tinting with textures</li>
+                </ul>
+                <br>
+                <ul>
+                    I planned 3 weeks with goals for each day that I later estimated time for and used as tasks:
+                    <li>1st week: create a model, store colors in IronWrought's model component-class, save & load using RapidJSON</li>
+                    <li>2nd week: editor with interface using Dear ImGui, orbit camera</li>
+                    <li>3rd week: refactoring and improvements</li>
+                    <li>4th & 5th weeks: textures and portfolio webpage work</li>
+                </ul>
+                <p>
                 </p>
             </div>
            
@@ -64,16 +72,19 @@
                 <p>click image to view tint map represenation</p>
             </div>
             <div class="CCenteredSingleDiv">
-                <h3>How to control which areas are to be tinted: a tint map</h3>
+                <h3>How To Control Which Areas Are To Be Tinted</h3>
                 <p> 
                     I wasn’t sure where or how I would start. And decided that I would look for a reference game.
-                    I decided on Warframe [Digital Extremes] cause I remembered that they use tint maps. Which they thoroughly
+                    I decided on <i>Warframe</i> [Digital Extremes] cause I remembered that they use <i>tint maps</i> to control the affected areas of a texture. Which they thoroughly
                     explain for their Tennogen program (community created cosmetics).
-                    <br>      
-                    Each channel of the tint map texture creates a mask that controls which areas are to be tinted.
-                    I then lerp between the the original albedo map, textures and the colors.
-                    The one that is last in the lerp-blend order becomes more prominent. I wanted the color to properly tint the texture
-                    so I placed it last, allowing me to tint a texture that is blue to be red.
+                </p>
+                <h3>Tinting of the Albedo</h3>
+                <p>
+                    For each pixel the RGBA values of the tint map are saved in 4 separate floats. These are then used to scale a blend factor which is used to <a href="#Improvements">lerp</a> between the
+                    RGB value sampled from the albedo map.
+                    The last one in the lerp-blend order becomes the most prominent, which is something to keep in mind. Currently the tint color is handled last.
+                    <br><br>
+                    The emissive areas are taken from a material map and is handled separately from the tints.
                 </p>
             </div>
 
@@ -96,16 +107,15 @@
             <div class="CCenteredSingleDiv">
                 <h3>Saving and Loading</h3>
                 <p> 
-                    With IronWrought we use RapidJSON for parsing most things which works well since the files are
-                    readable outside of the editor. The serialization and deserialization is handled inside the class that 
-                    holds the model-data to keep it consistent with how the rest of the components work in IronWrought.
+                    RapidJSON works great for this tool, there isn't a lot of data to be saved or loaded so it is not too slow and the convenience of the files being readable outside of the editor is a plus. 
+                    The serialization and deserialization are handled inside the class; <i>CModelComponent</i>, that holds the data to keep it consistent with how the rest of IronWrought works.
                 </p>
 
-                <div class="CShown">
+                <!-- <div class="CShown">
                     <img src="source/images/spec/code/Deserialize.png" alt="Deserialization">
                 </div>
                 <p>
-                </p>
+                </p> -->
             </div>
 
             <div class="CShown">
@@ -118,10 +128,9 @@
             <div class="CCenteredSingleDiv">
                 <h3>Orbit Camera</h3>
                 <p>
-                    The camera was tricky to get how I wanted it. I used Autodesk Mayas camera behaviour as reference.
-                    I underestimated the time it would take to get the camera to an acceptable working state.
-                    Was alot of fun, I've wanted to create a camera like this for a while. My main struggle with it was
-                    understanding spherical coordinate systems. I don't fully understand it yet but I've got a start.
+                    The camera was tricky to get to work like the reference. I underestimated the time it would take to get the camera to an acceptable working state.
+                    I struggled with understanding the spherical coordinate system, this was my introduction to it.<br>
+                    It was a lot of fun to work on.
                 </p>
             </div>
 
@@ -129,24 +138,23 @@
             <div class="CCenteredSingleDiv">
                 <h3>Conclusion</h3>
                 <p>
-                    I am satisfied with the results, although I feel there is a lot of room for improvent.
-                    The editor does what it needs to, even if it is a bit simple.
-                    I think it might have some use for the next game project
-                    Dear ImGui is wonderful to work with.
+                    I managed to complete all my goals and now I am left with something I can improve upon. Hopefully it will see some use on the final project.<br>
+                    I think using Warframe as a reference was a great idea to get started and the results of the coloring are not terrible.
+                    <a href="https://github.com/ocornut/imgui">Dear ImGui</a> is a great tool for creating interfaces for editors like this one. 
+                    I think the editor part would have been difficult to create without it, especially creating a color picker.
                     <br>
                 </p>
-                <h3>Improvements I wish to make</h3>
+                <h3 id="Improvements">Improvements I wish to make</h3>
                 <p>
-                    I think the lack of a proper folder browser might make the editor furstrating to use.
-                    Dear ImGui has no built-in folder broweser so either I download an addon or create my own. 
-                    <br>
-                    There are also optimizations that I could do for storing and handling data.
-                    I should also separate the tinted model data into its own from the default model component.
-                    <br>
-                    HSV for blending colors instead of RGB.<br>
-                    Separating the tint map from the FBX so that it is part of the customization json.<br>
-                    Creating in-game UI.<br>
-
+                    There are optimizations for when handling and storing data in C++ and when sent to the graphics card that can be done.
+                    <br><br>
+                    I think the lack of a proper folder browser might make the editor furstrating to use so next up might be to create one or find one online.
+                    The data for the tinted model could be encapsulated into its own class.
+                    <br><br>
+                    I got a tip about using HSV for blending colors instead of RGB since there is a chance of miscoloration when using lerp to blend RGB values.<br>
+                    Separating the tint map from the FBX so that one asset can have several tint maps to choose from.<br>
+                    <br><br>
+                    Creating an in-game editor would be really cool.
                 </p>
             </div>
 

@@ -66,17 +66,17 @@
                 <h3>Debug Tool: Line Drawer</h3>
                 <p>
                     In our previous projects made with Tga2D we had a convenient debugging tool to draw lines between 2 points or shapes such as circles and squares.
-                    I wanted to recreate a similar feature for IronWrought. To do so I created a structure similar to how we handle model creation in the engine.
+                    I wanted to recreate a similar feature for IronWrought. To do so I created a system with a structure similar to how we handle model creation.
                     <br>
                     <code>CLine</code> that holds DirectX11 data for topology, vertices, input layout and more.<br>
-                    <code>CLineInstance</code> that holds a pointer to a <code>CLine</code> and a transform.<br> 
+                    <code>CLineInstance</code> that holds a pointer to a <code>CLine</code> along with a transform.<br> 
                     <code>CLineFactory</code> which creates a <code>CLine</code> based on a pre-determined shape or a set of points that describe a polygon.<br>
                     A forward renderer that handles only <code>CLineInstances</code>.<br>
                     <br>
                     I created functions for the shapes of the colliders we used for the project: square, circle and triangle.
                     When the navigation mesh was being worked on I was requested to add support for visualizing it, resulting in the <code>CreatePolygon()</code> function.<br>
                     <br>
-                    There is room for improvement: streamlining creation of <code>CLines</code> and <code>>CLineInstances</code>, more shapes and memory optimizations.
+                    There is room for improvement: streamlining creation of <code>CLines</code> and <code>CLineInstances</code>, more shapes and memory optimizations.
                 </p>
             </div>
 
@@ -87,14 +87,13 @@
                 <h3>Modelviewer</h3>
                 <p>
                     A tool that I developed along with <a href="https://emanuelniklasson.wixsite.com/emanuelniklasson">Emanuel Niklasson</a>, from another team, for both our teams to use.
-                    A requirement for the project as well as a needed tool for the graphics artist to check models and their animations the tool
+                    A requirement for the project as well as a needed tool for the graphics artist to check models and their animations. The tool
                     was put together using existing systems with the goal being to get it up and running as fast as possible.<br>
                     <br>
-                    During development of SPITE: Bloodloss, our engine IronWrought was being put together as the we developed the game.
+                    During development of SPITE: Bloodloss, our engine IronWrought was being put together as we developed the game.
                     At the time we didn't have a GUI to use with the engine, we had heard of ImGui but were unsure of the time it would take to implement it and how much use it was going
                     to see. So we opted for using a console application as input for the tool.<br>
                     <br>
-                    We created a separate project that shared IronWrought.
                     To get all the FBX files from our asset directory we used <code>std::recursive_directory_iterator</code>, if a file with the correct extension was found
                     it was added to a <code>std::vector</code> to hold all paths. Loading and swapping the model based on the index in the vector.<br>
                     <br>
@@ -110,13 +109,13 @@
             <div class="CCenteredSingleDiv">
                 <h3>Game Object and Component System</h3>
                 <p>
-                    Developed with <a href="https://www.axelsavage.net/">Axel Savage</a> and <a href="https://www.alexander-matthai.com/">Alexander Matthäi</a>.<br>
+                    Developed with <a href="https://www.alexander-matthai.com/">Alexander Matthäi</a> and <a href="https://www.axelsavage.net/">Axel Savage</a>.<br>
                     For IronWrought the team knew we wanted some form component system, some of us had created and worked with one in a previous project and were eager to work with it again.<br>
-                    The system uses polymorphism to create an inheritance structure. A <code>CGameObject</code> holds any number of <code>CComponents</code>, which in turn holds logic. This was the core of the system we used, more functionalty was added later on.<br>
+                    The system uses polymorphism to create an inheritance structure. A <code>CGameObject</code> holds any number of <code>CComponents</code>, each holding some logic. This was the core of the system we used, more functionalty was added later on.<br>
                     <br>
                     We used <a href="https://unity.com/">Unity</a> as a reference for the type of interface we wanted, with e.g: <code>GetComponent()</code>. 
                     <code>GetComponent(), TryGetComponent(), RemoveComponent()</code> all use typeid: <code>const std::type_info& type = typeid(T);</code>, to identify which component is requested.<br>
-                    Since a <code>CComponent</code> could require any number of parameters in its constructor a variadic template was used.<br>
+                    Since a <code>CComponent</code> could require any number of parameters in its constructor so a variadic template was used to remove the need for separate functions to set data.<br>
                 </p>
             </div>
 
