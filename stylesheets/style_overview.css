@@ -55,7 +55,7 @@ h1, h2, h3{
 }
 .CHeader a{
     margin-right: 1%;
-    text-transform: lowercase;
+    text-transform: uppercase;
     /* color: rgb(255, 165, 115); */
 }
 

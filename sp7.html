@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Aki Gonzalez Portfolio - I AM</title>
+        <title>Aki Gonzalez - I AM</title>
         <link rel="stylesheet" type="text/css" href="stylesheets/style_overview.css"/>
     </head>
     <script src="js/Images.js"></script>
@@ -9,8 +9,12 @@
     <body>
         <div class="CHeader">
             <h1>Aki Gonzalez - Portfolio</h1>
-            <a href="index.html">Overview</a>
-            <a href="projects.html">Projects</a>
+            <h3>
+                Game programmer - Gameplay | Tools<br>
+            </h3>
+            <br>
+            <a href="index.html">Projects</a>
+            <!-- <a href="projects.html">Projects</a> -->
             <!-- <a href="archive.html">Archive</a> -->
             <a href="about.html">About</a>
         </div>
@@ -42,7 +46,7 @@
                 <br>
                 <ul>
                     Main Contributions:
-                    <li>Blended Animations System</li>
+                    <li>Blended Animations</li>
                 </ul>
                 <br>
                 <ul>
@@ -61,18 +65,18 @@
                 <img src="source/images/sp7/glove_animations.gif" alt="Glove Animations" id="Glove" onClick="SwapSource('Glove', 'Glove')">
             </div>   
             <div class="CCenteredSingleDiv">
-                <h3>Blended Animations System</h3>
+                <h3>Blended Animations</h3>
                 <p>
                     Blends between 2 animations at a time.<br>
                     I made some minor changes to the system from our previous project (SPITE: Bloodloss) as well as making sure it worked with our deferred renderer. I then got it setup to work with the player and the enemies.
                     <br><br>
-                    With the some of the graphics artist I sat and worked out what could be done with the system and on some ideas for the blending between animations as well as figuring out some issues with the system.
+                    With some of the graphics artist I sat and worked out what could be done with the system and on some ideas for the blending between animations for the player as well as figuring out some issues with the system.
                     <br><br>
-                    For the player I made a Component that holds some states and adjusts animations based on those states, a light-weight state machine. Function calls from other components toggled these states.
-                    The blending of the animation is done by lerping, primarily used for the pull function of the gravity glove where the distance of the object to the glove was used to change the animation.
-                    Example in the gif above.
+                    For the <b>player</b> I made a component that holds some states and adjusts animations based on those states, a light-weight state machine. Function calls from other components toggled these states.
+                    The blending of the animation is done by lerping.
+                    Example in the gif above of the pull function of the gravity glove (the players main tool for interacting with the world) where the distance of the object to the glove was used to change the animation.
                     <br><br>
-                    The enemies all share a central controller that receives which state an enemy is in and a desired animation using our PostMaster-event system.
+                    The <b>enemies</b> all share a central controller that receives which state an enemy is in and a desired animation using our PostMaster-event system.
                 </p>
             </div>
 
@@ -94,8 +98,7 @@
                     <br><br>
                     Widget Support for UI System<br>
                     I setup the menus and related states and together with <b>Nicolas Risberg</b> worked out the idea of widgets for our menus to support the concept created by our artists.<br>
-                    IronWrought has a class: <i>CCanvas</i> which is used for UI. It holds sprites, buttons, text and more. Widgets were originally intended to be its own class but required the same functionality as CCanvas and so what are called widgets are 
-                    any number of CCanvas helb by another, main, CCanvas.
+                    IronWrought has a class: <i>CCanvas</i> which is used for UI. It holds sprites, buttons, text and more. Widgets are any instances of CCanvas held by another main CCanvas.
                     <br><br>
                     Node Editor<br>
                     I helped <b>Haqvin Bager</b> with the <a href="https://haqvinbager.github.io/I_Am.html">node editor</a> on a couple of bugs and some optimizations.
