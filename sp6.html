@@ -27,7 +27,41 @@
                 </h2>
             </div>
 
+            <div class="CCenterBox_Large">
+
+                <div class="CLeftBoxTri">
+                    <ul>
+                        <b>Specifications:</b>
+                        <li>Team:<br>     <a href="softblob.html">SoftBlob Studios</a>, 13 members </li>
+                        <li>Engine:<br>   IronWrought [C++][DirectX11] (Engine developed by SoftBlob Studios)</li>
+                        <li>Duration:<br> 14 weeks half-time (4h/day)</li>
+                        <li>Genre:<br>    Action RPG</li>
+                    </ul>
+                </div>
+
+                <div class="CCenterBoxTri">
+                    <ul>
+                        <b>Main Contributions:</b>
+                        <li>Debug Tool: Line Drawer</li>
+                        <li>Modelviewer</li>
+                        <li>GameObject and Component System</li>
+                    </ul>
+                    <!-- <br>
+                    <ul>
+                        <b>Other Contributions:</b>
+                        <li>Animations and Animation Pipeline</li>
+                        <li>Enemies and Player Abilities Collision</li>
+                    </ul> -->
+                </div>
+                <div class="CRightBoxTri">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/5VBBRPEn-Tw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
             <div class="CCenteredSingleDivNoBorder">
+            </div>
+
+            <!-- <div class="CCenteredSingleDivNoBorder">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/5VBBRPEn-Tw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
 
@@ -53,7 +87,7 @@
                     <li>Enemies and Player Abilities Collision</li>
                 </ul>
                 <p></p>
-            </div>
+            </div> -->
 
             <!-- <div class="CCenteredSingleDivNoBorder">
                 <h3>Main Contributions</h3>
@@ -79,6 +113,8 @@
                     <br>
                     I created functions for the shapes of the colliders we used for the project: square, circle and triangle.
                     When the navigation mesh was being worked on I was requested to add support for visualizing it, resulting in the <code>CreatePolygon()</code> function.<br>
+                    Ability, player and enemy colliders were visualised to help debugging.
+                    <br>
                     <br>
                     There is room for improvement: streamlining creation of <i>CLines</i> and <i>CLineInstances</i>, support for more shapes and memory optimizations.
                 </p>
@@ -90,20 +126,18 @@
             <div class="CCenteredSingleDiv">
                 <h3>Modelviewer</h3>
                 <p>
-                    A tool that I developed along with <a href="https://emanuelniklasson.wixsite.com/emanuelniklasson">Emanuel Niklasson</a>, from another team, for both our teams to use.
-                    A requirement for the project as well as a needed tool for the graphics artist to check how models looked in the engine. The tool
-                    was put together using existing systems with the goal being to get it up and running as fast as possible.<br>
+                   
+                    During development of SPITE: Bloodloss, our engine IronWrought was being put together alongside development of the game and the graphics artists needed a way to view models without having to load the game directly.
+                    The tool was put together using existing systems with the goal being to get it up and running as fast as possible.<br>
                     <br>
-                    During development of SPITE: Bloodloss, our engine IronWrought was being put together alongside development of the game.
-                    At the time we didn't have a GUI to use with the engine, we had heard of ImGui but were unsure of the time it would take to implement it and how much use it was going
-                    to see. So we opted for using a console application as input for the tool.<br>
+                    To get all the FBX files from the asset directory we recursively traverse it, if a file with the correct extension is found
+                    it's added to a list that holds all paths. Loading and swapping the model based on index.<br>
                     <br>
-                    To get all the FBX files from our asset directory we used <code>std::recursive_directory_iterator</code>, if a file with the correct extension was found
-                    it was added to a <code>std::vector</code> to hold all paths. Loading and swapping the model based on the index in the vector.<br>
-                    <br>
-                    Later on a filter for skinned models was added so animations could be tested without having to be implemented in the game.
+                    Later on a filter for skinned models was added so animations could be tested without having to be implemented in the game and for troubleshooting.
                     <a href="https://nicolas-risberg.github.io/">Nicolas Risberg</a> who was working on the VFX system had the idea to also support VFX playback through the modelviewer, he also suggsted
                     adding a display option for the in-game HUD that auto played any animations it had.
+                    <br>
+                    Developed along with Emanuel Niklasson, from another team, for both our teams to use.
                 </p>
             </div>
 
@@ -113,13 +147,13 @@
             <div class="CCenteredSingleDiv">
                 <h3>Game Object and Component System</h3>
                 <p>
-                    Developed with <a href="https://www.alexander-matthai.com/">Alexander Matthäi</a> and <a href="https://www.axelsavage.net/">Axel Savage</a>.<br>
                     For IronWrought the team knew we wanted some form component system, some of us had created and worked with one in a previous project and were eager to work with it again.<br>
                     A <i>CGameObject</i> holds any number of <i>CComponents</i>, each holding some logic. This was the core of the system we used, more functionalty was added later on.<br>
                     <br>
                     We used <a href="https://unity.com/">Unity</a> as a reference for the type of interface we wanted, with e.g: <code>GetComponent()</code>. 
                     <code>GetComponent(), TryGetComponent(), RemoveComponent()</code> all use typeid: <code>const std::type_info& type = typeid(T);</code>, to identify which component is requested.<br>
                     Since a <i>CComponent</i> could require any number of parameters in its constructor so a variadic template was used to remove the need for separate functions to set data.<br>
+                    Developed with <a href="https://www.alexander-matthai.com/">Alexander Matthäi</a> and <a href="https://www.axelsavage.net/">Axel Savage</a>.<br>
                 </p>
             </div>
 

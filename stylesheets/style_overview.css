@@ -194,7 +194,7 @@ h1, h2, h3{
     margin-bottom: 3%;/*27%*/
     margin-top: 3%;
     padding: 1% 0% 5% 0%;
-    width: 70%;
+    width: 95%;
     max-height: 256px;
     height: 256px;
     border-bottom: 1px solid rgba(255, 250, 240,  0.065);
@@ -206,7 +206,7 @@ h1, h2, h3{
     float: left;
     padding: 0% 3% 0% 3% ;
     position: absolute;
-
+    background-color: blue;
     /* background-color: red; *//*Debug: show size */
 }
 .CTwoDivsLeftAligned img
@@ -226,7 +226,7 @@ h1, h2, h3{
     text-align: left;
     margin-top: 8%;
     position: relative;
-
+    background-color: red;
     /* background-color: blue;*//*Debug: show size */
 }
 /* .CTwoDivsRightAligned p
@@ -238,6 +238,52 @@ h1, h2, h3{
     margin-right: auto;
     margin-bottom: 5%;
 } */
+
+.CCenteredTwoDivs_Video
+{
+    clear:both;
+    float:center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3%;/*27%*/
+    margin-top: 3%;
+    padding: 1% 0% 5% 0%;
+    width: 95%;
+    max-height: 256px;
+    height: 256px;
+    border-bottom: 1px solid rgba(255, 250, 240,  0.065);
+
+    /* background-color: rgba(247, 0, 255, 0.226); *//*Debug: show size*/
+}
+.CTwoDivsLeftAligned_Video
+{
+    float: left;
+    padding: 0% 3% 0% 3% ;
+    position: absolute;
+    background-color: blue;
+    /* background-color: red; *//*Debug: show size */
+}
+.CTwoDivsLeftAligned_Video img
+{
+    width: 256px;
+    height: 256px;
+    border-radius: 3.14%;
+    border-style: ridge;
+    border-color: rgba(255, 250, 240, 0.445);
+    border-width: 1px;
+}
+.CTwoDivsRightAligned_Video
+{
+    clear:both;
+    float:right;
+    padding: 0% 3% 0% 3%;
+    text-align: left;
+    margin-top: 8%;
+    position: relative;
+    background-color: red;
+    /* background-color: blue;*//*Debug: show size */
+}
+
 
 .CCenteredSingleDiv
 {
@@ -349,13 +395,28 @@ h1, h2, h3{
     float: center;
     margin-left: auto;
     margin-right: auto;
-    width: 75%;
+    width: 65%;
+    /* background-color: black; */
 }
 .CCenterBox h3{
     text-align: center;
     text-transform: uppercase;
 }
 .CCenterBox a{
+    /* color: rgb(251, 215, 194); */
+}
+.CCenterBox_Large{
+    float: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    /* background-color: black; */
+}
+.CCenterBox_Large h3{
+    text-align: center;
+    text-transform: uppercase;
+}
+.CCenterBox_Large a{
     /* color: rgb(251, 215, 194); */
 }
 .CLeftBox {
@@ -365,6 +426,16 @@ h1, h2, h3{
     margin-top: 1%;
     margin-bottom: 1%;
     padding:1%;
+    /* background-color: red; */
+}
+.CLeftBox_LeftAligned {
+    width: 47%;
+    float:center;
+    text-align: left;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding:1%;
+    /* background-color: red;  */
 }
 .CRightBox {
     width: 47%;
@@ -373,8 +444,44 @@ h1, h2, h3{
     margin-top: 1%;
     margin-bottom: 1%;
     padding:1%;
+    /* background-color: blue;  */
+}
+
+.CLeftBoxTri{
+    width: 25%;
+    /* max-width: 25%; */
+    float:left;
+    text-align: left;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding:1% 0% 1% 0%;
+    /* background-color: red;  */
+}
+.CCenterBoxTri{
+    width: 20%;
+    /* max-width: 20%; */
+    float:left;
+    text-align: left;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding:1% 0% 1% 0%;
+    /* background-color: blue;  */
+}
+.CRightBoxTri{
+    width: 20%;
+    /* max-width: 20%; */
+    float:left;
+    text-align: left;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding:1% 0% 1% 0%;
+    /* background-color: green;  */
 }
 
 .CLinkColorOverride h3{
     color: rgb(255, 165, 115);
+}
+
+.CenteredLargeDiv{
+    width: 90%;
 }
