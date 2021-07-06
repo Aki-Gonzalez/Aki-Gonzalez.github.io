@@ -1,0 +1,78 @@
+html, body
+{
+    /* background-color:rgb(75, 56, 49); */
+    
+    /* background-color:slategrey; */
+    /*Darker slategrey*/
+    /* background-color:rgb(77, 88, 98); */
+    
+    background-color: rgb(2, 8, 19);
+    /* background-color:rgb(74, 94, 112); */
+    /* background-color:rgb(48, 48, 105);  */
+    font-family: Cambria, Arial, sans-serif;
+    height: 100%;
+    color: rgb(250, 237, 211);
+}
+
+* 
+{
+    margin: 0;
+}
+
+a
+{
+    text-decoration: none;
+    color: rgb(255, 165, 115);
+}
+
+code 
+{
+    background-color: rgba(121, 121, 121, 0.322);
+}
+
+h1, h2, h3{
+    margin: 0;
+    color: rgb(250, 237, 211);
+}
+
+.CPageContent
+{
+    /* background-color: rgb(132, 145, 158); */
+    background-color: rgba(255, 255, 255, 0.144);
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.CSelected
+{
+    font-weight: bold;
+}
+
+.CLinkColorOverride h3{
+    color: rgb(255, 165, 115);
+}
+
+.CenteredLargeDiv{
+    width: 90%;
+}
+
+.CCenteredLargeText
+{
+    clear:both;
+    margin: auto;
+    padding:1% 0% 1% 0%;
+    width: 75%;
+    float: center;
+    text-align: center;
+    font-size: 110%;
+    margin-bottom: 3%;
+    border-bottom: 1px solid rgba(255, 250, 240,  0.065);
+}
+.CCenteredLargeText p{
+    margin-bottom: 3%;;
+}
+.CCenteredLargeText a{
+    margin-right: 1%;
+    text-transform: lowercase;
+}

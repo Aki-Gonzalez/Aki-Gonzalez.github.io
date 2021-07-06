@@ -1,0 +1,108 @@
+.CCenterBox{
+    float: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+    /* background-color: black; */
+}
+.CCenterBox h3{
+    text-align: center;
+    text-transform: uppercase;
+}
+.CCenterBox a{
+    /* color: rgb(251, 215, 194); */
+}
+.CCenterBox_Large{
+    float: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    /* background-color: black; */
+}
+.CCenterBox_Large h3{
+    text-align: center;
+    text-transform: uppercase;
+}
+.CCenterBox_Large a{
+    /* color: rgb(251, 215, 194); */
+}
+
+
+.CLeftBox {
+    width: 47%;
+    float:left;
+    text-align: right;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding:1%;
+    /* background-color: red; */
+}
+.CLeftBox iframe{
+    width: 47%;
+    text-align: right;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding:1%;
+    border-radius: 1.57%;
+    /* background-color: red; */
+}
+.CLeftBox_LeftAligned {
+    width: 47%;
+    float:center;
+    text-align: left;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding:1%;
+    /* background-color: red;  */
+}
+
+
+.CRightBox {
+    width: 47%;
+    float:right;
+    text-align: left;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding:1%;
+    /* background-color: blue;  */
+}
+.CRightBox_LefttALigned {
+    width: 47%;
+    float:float;
+    text-align: left;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding:1%;
+    /* background-color: blue;  */
+}
+
+.CLeftBoxTri{
+    width: 25%;
+    /* max-width: 25%; */
+    float:left;
+    text-align: left;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding:1% 0% 1% 0%;
+    /* background-color: red;  */
+}
+.CCenterBoxTri{
+    width: 20%;
+    /* max-width: 20%; */
+    float:left;
+    text-align: left;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding:1% 0% 1% 0%;
+    /* background-color: blue;  */
+}
+.CRightBoxTri{
+    width: 20%;
+    /* max-width: 20%; */
+    float:left;
+    text-align: left;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding:1% 0% 1% 0%;
+    /* background-color: green;  */
+}

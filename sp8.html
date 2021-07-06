@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aki Gonzalez - Besöket</title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/header.css"/>
+        <link rel="stylesheet" type="text/css" href="stylesheets/body.css"/>
+        <link rel="stylesheet" type="text/css" href="stylesheets/boxes.css"/>
+        <link rel="stylesheet" type="text/css" href="stylesheets/centeredSingle.css"/>
+        <link rel="stylesheet" type="text/css" href="stylesheets/centeredSmall.css"/>
+        <link rel="stylesheet" type="text/css" href="stylesheets/imageSwap.css"/>
+        <link rel="stylesheet" type="text/css" href="stylesheets/footer.css"/>
+    </head>
+    <script src="js/Images.js"></script>
+    
+    <body>
+        <div class="CHeader">
+            <h1>Aki Gonzalez - Portfolio</h1>
+            <h3>
+                Game programmer<br>
+            </h3>
+            <br>
+            <a href="index.html">Projects</a>
+            <!-- <a href="projects.html">Projects</a> -->
+            <!-- <a href="archive.html">Archive</a> -->
+            <a href="about.html">About</a>
+        </div>
+
+        <div class="CPageContent"><!-- Page content -->
+            
+            <div class="CCenteredLargeText">
+                <h2>
+                    Besöket
+                </h2>
+            </div>
+
+            <div class="CCenterBox_Large">
+
+                <div class="CLeftBoxTri">
+                    <ul>
+                        <b>Specifications:</b>
+                        <li>Team:<br>     <a href="softblob.html">SoftBlob Studios</a>, 15 members </li>
+                        <li>Engine:<br>   IronWrought [C++][DirectX11][PhysX]</li>
+                        <li>Duration:<br> 9 weeks full-time (9h/day)</li>
+                        <li>Genre:<br>    Horror FPX</li>
+                    </ul>
+                </div>
+
+                <div class="CCenterBoxTri">
+                    <ul>
+                        <b>Main Contributions:</b>
+                        <li>UI/UX</li>
+                        <li>Monster: Grab Event</li>
+                        <li>Monster: Animations</li>
+                    </ul>
+                    <br>
+                    <ul>
+                        <b>Other Contributions:</b>
+                        <li>Monster: Hearing player footsteps</li>
+                        <li>Prototype: Loading All Levels As One</li>
+                    </ul>
+                </div>
+                <div class="CRightBoxTri">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/R9eKjTaD22Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div class="CCenteredSingleDivNoBorder">
+            </div>
+            
+            <div class="CShown">
+                <video autoplay loop src="source/images/sp8/main_menu.mp4" alt="UI/UX"></video>
+            </div>   
+            <div class="CCenteredSingleDiv">
+                <h3>UI/UX</h3>
+                <p>
+                    A taskforce brainstormed some ideas for the UI/UX of the game:<br>
+                    <b>Main Menu</b><br>
+                    The main menu was set to be a part of the first area for the game, the cottage.<br>
+                    As the menu is navigated a camera moves to various postions within the enviroment, allowing diegetic elements of the menu such as the title of the game and a credits group photo.<br>
+                    Pressing play would simply change the camera used to the one that player has control of and swap the menu for the HUD.
+                    <br>
+                    <br>
+                    <b>Pause Menu</b><br>
+                    A simple menu that lets the player see the environment even when paused.
+                    <br>
+                    <br>
+                    <b>HUD</b><br>
+                    As our reference game SOMA there is simply a reticle that changes depending on if something is interactable or not.
+                    <br>
+                    <br>
+                    In the previous projects <a href="sp6.html">SPITE: Bloodloss</a> and <a href="sp7.html">I AM</a> the menus were separate from the scene which the player was in.<br>
+                    IronWrought uses a StateStack, with an InGameState, PauseMenuState and so on; states for whatever is needed for the current game. It does not support rendering of another states' scene.
+                    <br>
+                    To keep in line with the the goal SoftBlobs' programmers had decided on at the start of the project: 
+                    do not redo anything or add anything new unless entirely necessary, I made a moderate mess inside the InGameState.<br>
+                    Although reworking existing systems would have been fun and made things more clear down the line this way of working allowed for faster prototyping. Additionally Besöket would be the last project made in IronWrought, reworking parts of the engine would take away from developing of the gameplay.
+                    <br>
+                    <br>
+                    Scenes hold GameObjects, updates them and sends them to rendering; they also hold a Canvas which holds anything UI related. Since a Scene can only hold a single Canvas I made InGameState hold several in an array, with an enum for index. 
+                    Changing the Canvas the Scene holds as depending on the state of the game, allowing for the Scene to hold both the player and change menu.
+                </p>
+            </div>
+
+            <div class="CShown">
+                <video autoplay loop src="source/images/sp8/grab.mp4" alt="Monster Grab">
+            </div>
+            <div class="CCenteredSingleDiv">
+                <h3>Monster: Grab Event</h3>
+                <p>
+                    SoftBlob wanted some form of animated event for when the monster catches up to the player.<br>
+                    Along with the artist responsible for animation I had a short meeting regarding the animation and worked out some of the details while showing a rough prototype.
+                    <br>
+                    <br>
+                    <b>Withing Distance To Grab The Player</b><br>
+                    Right before the start of the event the monster is moved back a bit to ensure its head doesn't clip through the players camera. 
+                    The event then fires and starts the animation as well as the timer for the event.
+                    <br>
+                    <br>
+                    <b>The Event</b><br>
+                    Right at the start the monster is oriented towards the player. 
+                    The player consists of several GameObjects that are childed to one another: to easily move the camera around it is unchilded and then set to appropriate height for the animation to play out.
+                    A timer is set that ticks down for the event, at the halfpoint the camera has finished rotating to face the monster and a fade out starts.<br>
+                    Once the event is finished the player is left crouched on the floor after a short fade in.
+                    <br>
+                    <br>
+                    <b>Game Over</b><br>
+                    Instant game-over was not an option, after the monster catches the player 3 times it is game over. At the end of the event the player checks a counter to see how many times its been caught, if it is the third time the level is set to reload after a short game over screen. 
+                    <br>
+                    <br>
+                    The tricksiest part of the event is that the player can be grabbed in so many states crouching, standing, sprinting and they could be facing away or staring into the ceiling, be under a table.<br>
+                    I hope most are accounted for but there are probably still some possible immersion breakers.<br>
+                    <br> 
+                </p>
+            </div>
+
+            <div class="CShown">
+                <video autoplay loop src="source/images/sp8/seek.mp4" alt="Seek"></video>
+            </div> 
+            <div class="CCenteredSingleDiv">
+                <h3>Monster: Animations</h3>
+                <p>
+                    Reused the AI animation controller from <a href="sp7.html">I AM</a> to connect animations to the monster's various states.<br>
+                    Whenever the monster changed states (example: Patrol to Seek) the animation controller would receive a message with some data regarding the state.<br>
+                    The data most often being where between 2 animations the animation should start. For example Seek, running with arms behind or reaching forward, would pass a % value: currentDistanceToPlayer / closeToPlayerMinimum on first entering the state and during updates.<br>
+                </p>
+            </div>
+            
+            <div class="CCenteredSingleDiv">
+                <h3>Other Contributions</h3>
+                <p>
+                    <b>Monster: Hearing Player Footsteps</b>
+                    <br>
+                    The monster could hear both objects being thrown around and the player.<br>
+                    The monster received the players playStepSound message along with data describing either walk or sprint which determines the hearing range. Comparing the squared distance between the monster and sound origin to the squared hearing range.
+                    <br>
+                    <br>
+                    <!-- <b>Prototype: Seamless Level Transitions</b>
+                    <br>
+                    <i>Goal:</i><br> 
+                    * Seamless level transitions: Ambition to walk across all levels without loadingscreens
+                    <br>
+                    <br>
+                    <i>Restrictions:</i><br>
+                    * IronWrought was built for single levels.<br>
+                    * Monster was built to work in a single level environment.<br>
+                    * Puzzles were worked on and tested for single level environment.<br>
+                    * Levels were supposed to still be playable by themselves.<br>
+                    <br>
+                    <i>What I Did:</i><br>
+                    Scenes (holds GameObects, handles update of them and passes along active objects to rendering) were split into sections using a map.
+                    Created volume triggers that switched active sections.
+                    Later on when issues with traversal across levels became an issue due to the group wanting the level to change, teleporters were added. Which were just instant loading screens.
+                    <br>
+                    I messed up. Did not communicate well enough. It wasn't the entire groups desire, It was mine and Axels. We split the work and I went to tackle it by myself. I did not think it through and started working 
+                    before listing the things above. If I had created a list like I've done above things would have been clear from the start.
+                    <br><br>
+                    <i>Why It Failed:</i><br>
+                    Trying to make a system work in a way it was not intended to. Larger, engine wide changes would have had to be made to support several scenes. Or change the way we built scenes in Unity.
+                    <br><br>
+                    <i>What Could Have Been Done To Make It Work:</i><br>
+                    PostMaster would have had to have support for sections.<br>
+                    GameObjects had Awake(), Start(), IsActive(). Adding a Sleep() would have resolved some issues with the monster and puzzles; instead of section toggling calling IsActive(true/false) it would have been Awake()/Sleep().
+                    However, there were many GameObects and many Components. Not sure how long it would take.
+                    <br><br>
+                    <i>Additional Thoughts:</i><br>
+                    The moment teleporters were discussed the question should have been brought up: is there any point to this? Teleporting around is close to loading levels anyway. Our loading times aren't long so there is not really much of
+                    a reason to have it. -->
+                </p>
+            </div>
+
+            <div class="CCenteredSingleDiv">
+                <iframe frameborder="0" src="https://itch.io/embed/1109245" width="552" height="167"><a href="https://the-game-assembly.itch.io/tga19-p8-besoket">TGA19 Game Project 8 - Besöket by The Game Assembly</a></iframe>
+            </div>
+
+            <div class="CCenteredLargeText">
+                <p>Youtube: 17min Playthrough without commentary:</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/TJUoWrRzZQA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div><!-- ! Page content -->
+
+        <div class="CFooter">
+            <a href="https://www.linkedin.com/in/aki-gonzalez-389425207"><img src="source/images/linkedin_icon.png" alt="LinkedIn Profile"></a>
+            <a href="https://github.com/Aki-Gonzalez"><img src="source/images/git_icon.png" alt="GitHub Profile"></a>
+        </div>
+
+    </body>
+</html>

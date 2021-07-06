@@ -1,0 +1,15 @@
+.CHeader
+{
+    background-color: rgba(255, 255, 255, 0);
+    border-bottom: 1px solid rgba(255, 250, 240, 0.065);
+    text-align: center;
+    padding: 10px;
+    /* color: rgba(255, 167, 116, 0.712); */
+    color: rgb(250, 237, 211);
+}
+.CHeader a{
+    margin-right: 0.1%;
+    text-transform: uppercase;
+    text-align: center;
+    /* color: rgb(255, 165, 115); */
+}

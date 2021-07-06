@@ -1,0 +1,104 @@
+.CCenteredTwoDivs
+{
+    clear:both;
+    float:center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3%;
+    margin-top: 3%;
+    padding: 1% 0% 5% 0%;
+    width: 95%;
+    max-height: 256px;
+    height: 256px;
+    border-bottom: 1px solid rgba(255, 250, 240,  0.065);
+
+    /* background-color: rgba(247, 0, 255, 0.226); *//*Debug: show size*/
+}
+
+.CTwoDivsLeftAligned
+{
+    float: left;
+    padding: 0% 3% 0% 3% ;
+    position: absolute;
+    background-color: blue;
+
+    /* background-color: red; *//*Debug: show size */
+}
+.CTwoDivsLeftAligned img
+{
+    width: 256px;
+    height: 256px;
+    border-radius: 3.14%;
+    border-style: ridge;
+    border-color: rgba(255, 250, 240, 0.445);
+    border-width: 1px;
+}
+.CTwoDivsLeftAligned_Video
+{
+    float: left;
+    padding: 0% 3% 0% 3% ;
+    position: absolute;
+    background-color: blue;
+
+    /* background-color: red; *//*Debug: show size */
+}
+.CTwoDivsLeftAligned_Video img
+{
+    width: 256px;
+    height: 256px;
+    border-radius: 3.14%;
+    border-style: ridge;
+    border-color: rgba(255, 250, 240, 0.445);
+    border-width: 1px;
+}
+
+.CTwoDivsRightAligned
+{
+    clear:both;
+    float:right;
+    padding: 0% 3% 0% 3%;
+    text-align: left;
+    margin-top: 8%;
+    position: relative;
+    background-color: red;
+
+    /* background-color: blue;*//*Debug: show size */
+}
+.CTwoDivsRightAligned_Video
+{
+    clear:both;
+    float:right;
+    padding: 0% 3% 0% 3%;
+    text-align: left;
+    margin-top: 8%;
+    position: relative;
+    background-color: red;
+
+    /* background-color: blue;*//*Debug: show size */
+}
+/* .CTwoDivsRightAligned p
+{
+    text-align: left;
+    word-break: keep-all;
+    max-width: 97%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+} */
+
+.CCenteredTwoDivs_Video
+{
+    clear:both;
+    float:center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3%;
+    margin-top: 3%;
+    padding: 1% 0% 5% 0%;
+    width: 95%;
+    max-height: 256px;
+    height: 256px;
+    border-bottom: 1px solid rgba(255, 250, 240,  0.065);
+
+    /* background-color: rgba(247, 0, 255, 0.226); *//*Debug: show size*/
+}
