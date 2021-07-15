@@ -39,8 +39,8 @@
                     <ul>
                         <b>Specifications:</b>
                         <li>Team:<br>     <a href="softblob.html">SoftBlob Studios</a>, 15 members </li>
-                        <li>Engine:<br>   IronWrought [C++][DirectX11][PhysX]</li>
-                        <li>Duration:<br> 9 weeks full-time (9h/day)</li>
+                        <li>Engine:<br>   <a href="ironwrought.html">IronWrought</a> [C++][DirectX11][PhysX]</li>
+                        <li>Duration:<br> 9 weeks full-time (8h/day)</li>
                         <li>Genre:<br>    Horror FPX</li>
                     </ul>
                 </div>
@@ -49,14 +49,14 @@
                     <ul>
                         <b>Main Contributions:</b>
                         <li>UI/UX</li>
-                        <li>Monster: Grab Event</li>
+                        <li>Monster: Attacking the Player</li>
                         <li>Monster: Animations</li>
                     </ul>
                     <br>
                     <ul>
                         <b>Other Contributions:</b>
                         <li>Monster: Hearing player footsteps</li>
-                        <li>Prototype: Loading All Levels As One</li>
+                        <!-- <li>Prototype: Loading All Levels As One</li> -->
                     </ul>
                 </div>
                 <div class="CRightBoxTri">
@@ -73,31 +73,27 @@
             <div class="CCenteredSingleDiv">
                 <h3>UI/UX</h3>
                 <p>
-                    A taskforce brainstormed some ideas for the UI/UX of the game:<br>
-                    <b>Main Menu</b><br>
-                    The main menu was set to be a part of the first area for the game, the cottage.<br>
-                    As the menu is navigated a camera moves to various postions within the enviroment, allowing diegetic elements of the menu such as the title of the game and a credits group photo.<br>
-                    Pressing play would simply change the camera used to the one that player has control of and swap the menu for the HUD.
+                    <!-- A taskforce brainstormed some ideas for the UI/UX of the game:<br> -->
+                    <b>Menus and UI: their purpose:</b>
                     <br>
                     <br>
-                    <b>Pause Menu</b><br>
-                    A simple menu that lets the player see the environment even when paused.
+                    Main Menu<br>
+                    The main menu was set to be a part of the first area for the game, the cottage. Immediately placing and immersing the player into the world.<br>
+                    As the menu is navigated a camera moves to various postions within the cottage, allowing elements such as the title of the game and a credits group photo to be diegetic.<br>
+                    Pressing play transitions the camera to where the player is supposed to start the level.
                     <br>
                     <br>
-                    <b>HUD</b><br>
-                    As our reference game SOMA there is simply a reticle that changes depending on if something is interactable or not.
+                    Pause Menu<br>
+                    Pauses the game while still showing the environment of the level.
                     <br>
                     <br>
-                    In the previous projects <a href="sp6.html">SPITE: Bloodloss</a> and <a href="sp7.html">I AM</a> the menus were separate from the scene which the player was in.<br>
-                    IronWrought uses a StateStack, with an InGameState, PauseMenuState and so on; states for whatever is needed for the current game. It does not support rendering of another states' scene.
-                    <br>
-                    To keep in line with the the goal SoftBlobs' programmers had decided on at the start of the project: 
-                    do not redo anything or add anything new unless entirely necessary, I made a moderate mess inside the InGameState.<br>
-                    Although reworking existing systems would have been fun and made things more clear down the line this way of working allowed for faster prototyping. Additionally Besöket would be the last project made in IronWrought, reworking parts of the engine would take away from developing of the gameplay.
+                    HUD<br>
+                    A centered sprite that changes depending on if something is interactable or not, similar to our reference game SOMA.
                     <br>
                     <br>
-                    Scenes hold GameObjects, updates them and sends them to rendering; they also hold a Canvas which holds anything UI related. Since a Scene can only hold a single Canvas I made InGameState hold several in an array, with an enum for index. 
-                    Changing the Canvas the Scene holds as depending on the state of the game, allowing for the Scene to hold both the player and change menu.
+                    IronWrought does not have support for doing all the goals the group had for the UI. I opted to not expand on existing systems of the engine which allowed faster prototyping and end results at the cost of flexibility.  
+                    A scene in IronWrought can hold one set of UI elements: a canvas. The idea being that a scene has a purpose and the canvas is tied to that purpose. The workaround was to have all necessary canvases ready and swap which one the scene held to fit the state of the game.
+                    The sprite change on the hud is handled in a specific case through IronWrought's post master, there were different objects that could affect which sprite to display.
                 </p>
             </div>
 
@@ -105,30 +101,13 @@
                 <video autoplay loop src="source/images/sp8/grab.mp4" alt="Monster Grab">
             </div>
             <div class="CCenteredSingleDiv">
-                <h3>Monster: Grab Event</h3>
+                <h3>Monster: Attacking the Player</h3>
                 <p>
-                    SoftBlob wanted some form of animated event for when the monster catches up to the player.<br>
-                    Along with the artist responsible for animation I had a short meeting regarding the animation and worked out some of the details while showing a rough prototype.
-                    <br>
-                    <br>
-                    <b>Withing Distance To Grab The Player</b><br>
-                    Right before the start of the event the monster is moved back a bit to ensure its head doesn't clip through the players camera. 
-                    The event then fires and starts the animation as well as the timer for the event.
-                    <br>
-                    <br>
-                    <b>The Event</b><br>
-                    Right at the start the monster is oriented towards the player. 
-                    The player consists of several GameObjects that are childed to one another: to easily move the camera around it is unchilded and then set to appropriate height for the animation to play out.
-                    A timer is set that ticks down for the event, at the halfpoint the camera has finished rotating to face the monster and a fade out starts.<br>
-                    Once the event is finished the player is left crouched on the floor after a short fade in.
-                    <br>
-                    <br>
-                    <b>Game Over</b><br>
-                    Instant game-over was not an option, after the monster catches the player 3 times it is game over. At the end of the event the player checks a counter to see how many times its been caught, if it is the third time the level is set to reload after a short game over screen. 
-                    <br>
-                    <br>
-                    The tricksiest part of the event is that the player can be grabbed in so many states crouching, standing, sprinting and they could be facing away or staring into the ceiling, be under a table.<br>
-                    I hope most are accounted for but there are probably still some possible immersion breakers.<br>
+                    When the monster reaches the player, or perhaps the player bumps into the monster out of curiosity, the monster reacts by grabbing the player.
+                    I setup the process for the event. Positioning and orienting both the player and the monster to work with the monster's animation at the start of it.
+                    Teleporting the monster to a nearby spawnpoint once finished and leaving the player in where it was at the start. 
+                    <!-- I worked with Josephine Eriksson, the artist who animated the monster to work out the details of the animation for the event and what restrictions there were.
+                    Nicolas Risberg worked in parallell with me to fix the screen effect when looking at the monster, which we tweaked to work together with the event. -->
                     <br> 
                 </p>
             </div>
