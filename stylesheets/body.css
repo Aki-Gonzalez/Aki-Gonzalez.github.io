@@ -6,7 +6,8 @@ html, body
     /*Darker slategrey*/
     /* background-color:rgb(77, 88, 98); */
     
-    background-color: rgb(2, 8, 19);
+    background-color: rgb(36, 29, 25);
+    /* background-color: rgb(2, 8, 19); */
     /* background-color:rgb(74, 94, 112); */
     /* background-color:rgb(48, 48, 105);  */
     font-family: Cambria, Arial, sans-serif;
@@ -33,12 +34,14 @@ code
 h1, h2, h3{
     margin: 0;
     color: rgb(250, 237, 211);
+    text-decoration: none;
+    font-weight:normal;
 }
 
 .CPageContent
 {
     /* background-color: rgb(132, 145, 158); */
-    background-color: rgba(255, 255, 255, 0.144);
+    /* background-color: rgba(255, 255, 255, 0.144); */
     width: 65%;
     margin-left: auto;
     margin-right: auto;
@@ -46,7 +49,10 @@ h1, h2, h3{
 
 .CSelected
 {
-    font-weight: bold;
+    /* font-weight: bold; */
+    /* text-decoration: underline overline; */
+    text-decoration: overline;
+    /* text-decoration: underline; */
 }
 
 .CLinkColorOverride h3{
