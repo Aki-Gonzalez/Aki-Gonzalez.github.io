@@ -58,9 +58,10 @@
                 <br>
                 <h3>Contributions</h3>
                 <p>
-                    I worked on UI/UX, gameplay programming for the monster, game states and level loading.<br>
-                    Had full responsiblity over UI/UX for the menus and the crosshair, which reacted to interactable objects.
-                    Connected animations to the monster's AI and programmed the monster grabbing the player interaction.                     
+                    My contribution to the project was mainly as a generalist. Among my contributions were:<br>
+                    Animation states for the monster: the AI's state was broadcast to a state machine that handled transitions between animations. 
+                    Dynamic crosshair that reacted to interactable objects. Menus and gamestates. Transitions between areas of the game.
+                    Wrote the scripted event for when the monster grabs the player.                   
                 </p>
                 <br>
                 <iframe 
@@ -109,8 +110,8 @@
                 <br>
                 <h3>Contributions</h3>
                 <p>
-                    I worked on UI/UX for the menus and HUD. Animation state machine used by the player and the AI. 
-                    Gameplay Assisted with various rendering features and the engine's node editor.
+                    My role was as a generalist programmer who helped out where needed, taking care of the small necessary things.<br>
+                    Main contribution was an animation state machine, one for the player and one for the NPCs: receiving broadcasted states from an entity it handled transitions between animations.
                 </p>
                 <br>
             </div>
@@ -151,7 +152,9 @@
                 <br>
                 <h3>Contributions</h3>
                 <p>
-                    Generalist programmer with main responsiblity for the animation system used by the AI and the player. Debugging tools: line drawer and modelviewer.
+                    Generalist programmer with main responsiblity for the animation system used by the NPCs and the player.<br>
+                    A line drawer debugging tool used for colliders and navmesh visualization. A modelviewer to view models, animations and later on VFX
+                    rendered in-engine.
                 </p>
                 <br>
             </div>
@@ -192,7 +195,7 @@
                 <br>
                 <h3>Contributions</h3>
                 <p>
-                    Worked on level loading, menus and gameplay programming for various puzzle pieces.
+                    Main contributions were level loading, game states, menus and gameplay programming for various puzzle pieces. 
                 </p>
                 <br>
             </div>
@@ -216,10 +219,9 @@
                     Tool created during the specialization course at The Game Assembly. <br><br>
                     I wanted to build a tool that would allow my project group's level designers to create color variations for certain models, like enemies, which could possibly reduce the workload for the artists.
                     <br>
-                </p>
-                <p>
+                    <br>
                     I chose the game Warframe as my reference for the implementation. In Warframe players can tint their warframe with a set of colors, the areas the colors
-                    affect are decided using a tintmap. The tintmap is a small texture where each color channel represents a mask, if the red channel has data on a pixel the color of the albedo map will be blended with a desired RGB value. 
+                    affect are decided using a tintmap. The tintmap is a small texture where each color channel represents a mask, if the red channel has data on a pixel the desired color will be mixed with color from the albedo map. 
                     <br>
                     <br>
                     The tool is in-engine and uses <a href="https://github.com/ocornut/imgui">Dear ImGui</a> for the user interface. A model can be loaded

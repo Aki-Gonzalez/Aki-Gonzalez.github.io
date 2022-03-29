@@ -18,6 +18,9 @@
     text-transform: lowercase;
     /* color: rgb(251, 215, 194); */
 }
+.CCenteredSmallDiv p{
+    text-align: center;
+}
 
 .CCenteredSmallDiv_SansRoundedCorners{
     clear:both;
