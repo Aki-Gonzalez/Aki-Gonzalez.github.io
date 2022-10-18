@@ -1,3 +1,5 @@
+
+
 .CHeader
 {
     background-color: rgba(255, 255, 255, 0);
@@ -7,12 +9,7 @@
     /* color: rgba(255, 167, 116, 0.712); */
     color: rgb(250, 237, 211);
 }
-.CHeader a{
-    margin-right: 0.1%;
-    text-transform: uppercase;
-    text-align: center;
-    /* color: rgb(255, 165, 115); */
-}
+
 
 .CHeader p
 {
@@ -28,6 +25,28 @@
     width: 32px;
     height: 32px;
     padding: 1px;
+}
+
+.CHeader a{
+    margin-right: 0.1%;
+    text-transform: uppercase;
+    text-align: center;
+    /* color: rgb(255, 165, 115); */
+}
+
+@media only screen and (min-resolution: 117dpi) and (max-resolution: 119dpi), only screen and (min-resolution: 131dpi) and (max-resolution: 133dpi), only screen and (min-resolution: 145dpi) and (max-resolution: 154dpi), only screen and (min-resolution: 162dpi) and (max-resolution: 164dpi), only screen and (min-resolution: 169dpi) {
+    /* Your touch-specific css goes here */
+    #BreakLineAfter::after{
+        content: "\a";
+        white-space: pre;
+    }
+}
+@media only screen and (min-resolution: 165dpi) and (max-resolution: 168dpi), only screen and (min-resolution: 155dpi) and (max-resolution: 160dpi), only screen and (min-resolution: 134dpi) and (max-resolution: 144dpi), only screen and (min-resolution: 120dpi) and (max-resolution: 130dpi), only screen and (max-resolution: 116dpi) {
+    /* Your click-specific css goes here */
+    #BreakLineAfter::after{
+        content: "\00a0\00a0\00a0\00a0";
+        white-space:post;
+    }
 }
 
 .CHeaderMain
