@@ -6,7 +6,7 @@ html, body
     min-width: 30%;
     max-width: 100%;
     color: rgb(246, 205, 158);
-    font-size: 1.07em;
+    font-size: 1.02em;
 }
 
 * 
@@ -19,7 +19,7 @@ a
     text-decoration: none;
     position: relative;
     color: rgb(255, 165, 115);
-    font-size: 1.08em;
+    font-size: 1.03em;
 }
 
 a::before {
