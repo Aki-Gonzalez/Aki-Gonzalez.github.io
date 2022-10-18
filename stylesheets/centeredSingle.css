@@ -1,7 +1,25 @@
+@media only screen and (min-resolution: 117dpi) and (max-resolution: 119dpi), only screen and (min-resolution: 131dpi) and (max-resolution: 133dpi), only screen and (min-resolution: 145dpi) and (max-resolution: 154dpi), only screen and (min-resolution: 162dpi) and (max-resolution: 164dpi), only screen and (min-resolution: 169dpi) {
+    /* Your touch-specific css goes here */
+    #DeviceSingleDivOverride{
+        /* background-color:rgb(255, 165, 115); */
+        max-width: 100%;
+        min-width: 90%;
+    }
+}
+@media only screen and (min-resolution: 165dpi) and (max-resolution: 168dpi), only screen and (min-resolution: 155dpi) and (max-resolution: 160dpi), only screen and (min-resolution: 134dpi) and (max-resolution: 144dpi), only screen and (min-resolution: 120dpi) and (max-resolution: 130dpi), only screen and (max-resolution: 116dpi) {
+    /* Your click-specific css goes here */
+    #DeviceSingleDivOverride{
+        /* background-color:rgb(255, 89, 0); */
+        max-width: 70%;
+        min-width: 65%;
+    }
+}
+
 .CCenteredSingleDiv
 {
     clear: both;
-    width: 70%;
+    /* width: 100%; */
+    /* max-width: 70%; */
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 25px;
@@ -84,7 +102,7 @@
 .CCenteredSingleDivNoBorder
 {
     clear: both;
-    width: 70%;
+    /* width: 70%; */
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 25px;
