@@ -17,7 +17,7 @@
     margin-bottom: 5%;
     border-radius: 1.57%;
     max-width: 77%;
-    max-height: 100%;
+    max-height: auto;
 }
 .CCenteredSingleDiv h3
 {
@@ -44,15 +44,17 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 77%;
-    max-height: 77%;
+    width: 77%;
+    min-height: 50%;
+    max-height: auto;
+    /* height: auto; */
 }
 .CCenteredSingleDiv video{
     display: block;
     margin-left: auto;
     margin-right: auto;
     max-width: 77%;
-    max-height: 100%;
+    height: auto;
     border-radius: 1.57%;
 }
 .CCenteredSingleDiv ul{
@@ -61,6 +63,25 @@
     margin-right: auto;
     max-width: 99%;
     max-height: 100%;
+}
+
+.CCenteredSingleDivIFrameOverride
+{
+    clear: both;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 250, 240,  0.065);
+}
+.CCenteredSingleDivIFrameOverride iframe{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 77%; */
+    /* min-height: 50%; */
+    /* max-height: auto; */
+    /* height: auto; */
 }
 
 
@@ -82,7 +103,7 @@
     margin-bottom: 5%;
     border-radius: 1.57%;
     max-width: 77%;
-    max-height: 100%;
+    max-height: auto;
 }
 .CCenteredSingleDivNoBorder h3
 {
@@ -124,6 +145,6 @@
     margin-left: auto;
     margin-right: auto;
     max-width: 77%;
-    max-height: 100%;
+    max-height: auto;
     border-radius: 1.57%;
 }
