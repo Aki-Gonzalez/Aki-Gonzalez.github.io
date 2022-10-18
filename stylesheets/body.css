@@ -54,35 +54,20 @@ h1, h2, h3{
 
 @media only screen and (min-resolution: 117dpi) and (max-resolution: 119dpi), only screen and (min-resolution: 131dpi) and (max-resolution: 133dpi), only screen and (min-resolution: 145dpi) and (max-resolution: 154dpi), only screen and (min-resolution: 162dpi) and (max-resolution: 164dpi), only screen and (min-resolution: 169dpi) {
     /* Your touch-specific css goes here */
-    .CPageContent
-    {
-         background-color: rgb(132, 145, 158);
-        /* background-color: rgba(255, 111, 0, 0.093); */
-        /* width: auto;*/
-        height: auto; 
-        max-width: 99%;
+    #DevicePageContentOverride{
+        max-width: 100%;
         min-width: 90%;
-        margin-left: auto;
-        margin-right: auto;
     }
 }
 @media only screen and (min-resolution: 165dpi) and (max-resolution: 168dpi), only screen and (min-resolution: 155dpi) and (max-resolution: 160dpi), only screen and (min-resolution: 134dpi) and (max-resolution: 144dpi), only screen and (min-resolution: 120dpi) and (max-resolution: 130dpi), only screen and (max-resolution: 116dpi) {
     /* Your click-specific css goes here */
-    .CPageContent
-    {
-        background-color: rgb(0, 128, 255);
-        /* background-color: rgb(132, 145, 158); */
-        /* background-color: rgba(255, 111, 0, 0.093); */
-        /* width: auto;*/
-        height: auto; 
+    #DevicePageContentOverride{
         max-width: 80%;
         min-width: 70%;
-        margin-left: auto;
-        margin-right: auto;
     }
 }
 
-/* .CPageContent
+.CPageContent
 {
     width: auto;
     height: auto;
@@ -90,7 +75,7 @@ h1, h2, h3{
     min-width: 70%;
     margin-left: auto;
     margin-right: auto;
-} */
+}
 
 .CSelected
 {
