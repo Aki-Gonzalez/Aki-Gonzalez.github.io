@@ -1,15 +1,16 @@
 .CFooter
 {
-    padding:10px;
-    width: 960px;
+    padding: 10px;
+    /* width: 960px; */
+    width: 50%;
+
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     text-transform: uppercase;
-    /* border-top: 1px solid rgba(255, 255, 255, 0.25); */
     margin-bottom:0px;
 }
 .CFooter img{
     width: 32px;
-    height: 32px;;
+    height: 32px;
 }
