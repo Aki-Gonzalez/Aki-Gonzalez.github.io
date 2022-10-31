@@ -40,21 +40,27 @@
         content: "\a\a";
         white-space: pre;
     }
+    #EmptySpaceAfter::after{
+        white-space: pre;
+    }
 }
 @media only screen and (min-resolution: 165dpi) and (max-resolution: 168dpi), only screen and (min-resolution: 155dpi) and (max-resolution: 160dpi), only screen and (min-resolution: 134dpi) and (max-resolution: 144dpi), only screen and (min-resolution: 120dpi) and (max-resolution: 130dpi), only screen and (max-resolution: 116dpi) {
     /* Your click-specific css goes here */
     #BreakLineAfter::after{
-        content: "\00a0\00a0\00a0\00a0";
+        /* content: "\00a0\00a0\00a0\00a0"; */
         white-space: pre;
+    }
+    #EmptySpaceAfter::after{
+        content: "\00a0\00a0\00a0";
     }
 }
 
 .CHeaderMain
 {
     background-color: rgba(255, 255, 255, 0);
-    border-bottom: 1px solid rgba(255, 250, 240, 0.065);
     text-align: center;
     padding: 10px;
+    margin-top: 16px;
     /* color: rgba(255, 167, 116, 0.712); */
     color: rgb(250, 237, 211);
 }
@@ -63,9 +69,11 @@
     text-align: center;
     color: rgb(250, 237, 211);
 }
-
 .CHeaderMain img{
     width: 32px;
     height: 32px;
     padding: 1px;
+}
+#MoveUp{
+    padding-top: 12px;
 }

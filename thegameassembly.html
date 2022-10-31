@@ -9,7 +9,6 @@
         <link rel="stylesheet" type="text/css" href="stylesheets/centeredSingle.css"/>
         <link rel="stylesheet" type="text/css" href="stylesheets/style_overview.css"/>
     </head>
-    <script src="js/Images.js"></script>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -19,16 +18,20 @@
         </div>
 
         <div class="CHeader">
-            <a id="BreakLineAfter" href="professionalwork.html">Professional Work</a>
-            <a id="BreakLineAfter" class="CSelected" href="thegameassembly.html">The Game Assembly</a>
-            <a id="BreakLineAfter" href="about.html">About</a>
+            <a id="BreakLineAfter" href="professionalwork.html">Professional Work</a><a id="EmptySpaceAfter"></a>
+            <a id="BreakLineAfter" class="CSelected" href="thegameassembly.html">The Game Assembly</a><a id="EmptySpaceAfter"></a>
+            <a id="BreakLineAfter" href="about.html">About</a><a id="EmptySpaceAfter"></a>
         </div>
         
         <div id="DevicePageContentOverride" class="CPageContent">
 
-            <div id="DeviceSingleDivOverride" class="CCenteredSingleDiv" id="sp8">
+            <div id="DeviceSingleDivOverride" class="CCenteredSingleDiv">
+                <br>
+                <video autoplay loop src="source/images/sp8/menu.mp4" alt="Menus"> </video>
+                <br>
                 <br>
                 <video autoplay loop src="source/images/sp8/grab.mp4" alt="Monster Grab"> </video>
+                <br>
                 <br>
                 <iframe 
                     width="720" 
@@ -56,25 +59,28 @@
                     <a href="softblob.html">SoftBlob Studios</a> | <a href="ironwrought.html">IronWrought</a> [C++] | Horror FPX | PC, Windows | 9 weeks full-time (8h/day)
                 </h4>
                 <br>
-                <h3>Contributions</h3>
                 <p>
-                    My contribution to the project was mainly as a generalist. Among my contributions were:<br>
-                    Animation states for the monster: the AI's state was broadcast to a state machine that handled transitions between animations. 
-                    Dynamic crosshair that reacted to interactable objects. Menus and gamestates. Transitions between areas of the game.
-                    Wrote the scripted event for when the monster grabs the player.                   
+                    Besöket (English: The Visit): you respond to a cry of help from your friend, locked in a strange Swedish cottage. 
+                    Find a way to free your friend, solve the puzzles all while evading the unknown horrors of the house. 
+                    You better be careful, or this act of kindness might be your last.
+                    <br><br>
+                    The final game project of the second year at The Game Assembly.<br>
+                    Made in <a href="ironwrought.html">IronWrought</a>, an engine developed by my second year project group.
+                    <br><br>
+                    Mostly a generalist, I had 2 main contributions to the project: logic and behaviour for the UI, menus and dynamic crosshair; and animation programming for the AI 
+                    working alongside the animator to make sure the monster moved in ways that respected the space of the game.
+                    <br> 
+                    For the animation programming I used the animation state machine I wrote for the previous project, I AM, connecting it to the AI logic of the monster.
+                    I scripted the interaction for when the monster grabs the player which meant locking the player in place, removing control and making them face the monster.               
                 </p>
-                <br>
-            </div>
-            
-            <div class="CCenteredSingleDivIFrameOverride">
                 <iframe
                     frameborder="0" 
                     src="https://itch.io/embed/1109245" 
                     width="113" 
                     height="84">
-                    <a href="https://the-game-assembly.itch.io/tga19-p8-besoket">TGA19 Game Project 8 - Besöket by The Game Assembly</a>
+                        <a href="https://the-game-assembly.itch.io/tga19-p8-besoket">TGA19 Game Project 8 - Besöket by The Game Assembly</a>
                 </iframe>
-                <br>
+            <br>
             </div>
 
             <div id="DeviceSingleDivOverride" class="CCenteredSingleDiv" id="sp7">
@@ -106,10 +112,15 @@
                     <a href="softblob.html">SoftBlob Studios</a> | <a href="ironwrought.html">IronWrought</a> [C++] | FPX | PC, Windows | 16 weeks full-time (8h/day)
                 </h4>
                 <br>
-                <h3>Contributions</h3>
                 <p>
-                    My role was as a generalist programmer who helped out where needed, taking care of the small necessary things.<br>
-                    Main contribution was an animation state machine, one for the player and one for the NPCs: receiving broadcasted states from an entity it handled transitions between animations.
+                    You took something you shouldn't have! Use the gravity glove you stole to overcome obstacles and dangerous robots as you seek your freedom. 
+                    <br><br>
+                    Second game project made in <a href="ironwrought.html">IronWrought</a>, an engine developed by my second year project group.
+                    PhysX was added to the engine for this project and we wanted a game that centers around physics.
+                    <br><br>
+                    My role in the project was as a generalist where I contributed to player movement, menus and more.<br>
+                    I had full responsibility over the logic behind the HUD for the player: a healthbar and a dynamic crosshair which connected to the gravity glove to emphasize its actions.<br>
+                    Wrote an event based Animation State Machine that was used by the player and the AI, which blended between given animations depending on the state of the character.
                 </p>
                 <br>
             </div>
@@ -144,11 +155,15 @@
                     <a href="softblob.html">SoftBlob Studios</a> | <a href="ironwrought.html">IronWrought</a> [C++] | Action RPG | PC, Windows | 14 weeks half-time (4h/day)
                 </h4>
                 <br>
-                <h3>Contributions</h3>
                 <p>
-                    Generalist programmer with main responsiblity for the animation system used by the NPCs and the player.<br>
-                    A line drawer debugging tool used for colliders and navmesh visualization. A modelviewer to view models, animations and later on VFX
-                    rendered in-engine.
+                    A kingdom nearing ruin! Fight your way to the castle to confront your father, King Ulberic, and find answers to this tragedy.  
+                    <br><br>
+                    The first game project made in <a href="ironwrought.html">IronWrought</a>, an engine developed by my second year project group. The game and the engine
+                    were developed in parallell during the project. 
+                    <br><br>
+                    I made a modelviewer that the artists could use to preview the behaviour of rendering and animations in the engine. It was later expanded to include VFX preview and UI elements.<br>
+                    A debug tool for line rendering which was used to visualize colliders and NavMesh. Animation programming for the player and AI.
+                    All in all I was an all-round programmer.
                 </p>
                 <br>
             </div>
@@ -183,9 +198,13 @@
                     Diamond Eyes Studios | TGA2D [C++] | Top-Down Adventure Puzzler | PC, Windows | 8 weeks half-time (4h/day)
                 </h4>
                 <br>
-                <h3>Contributions</h3>
                 <p>
-                    Main contributions were level loading, game states, menus and gameplay programming for various puzzle pieces. 
+                    Puzzle your way through the ruins of a long gone society and learn their history. 
+                    <br><br>
+                    The fifth project at The Game Assembly developed in TGA2D, the school's in-house engine.
+                    <br><br>
+                    I had responsibility over gameplay programming for various puzzle pieces, keys and locks, used for the pressure plates and braziers found in the game that were used to unlock doors and gates.
+                    I put together the logic for the menus and collaborated on a state stack which I later used to handle the transitions between levels as well as menus. 
                 </p>
                 <br>
             </div>
@@ -193,8 +212,8 @@
 
             <div id="DeviceSingleDivOverride" class="CCenteredSingleDiv">
                 <br>
-                <img src="source/images/spec/final.gif" alt="Everything" id="Final" onClick="SwapSource('Final', 'Smiley')">
-                <img src="source/images/spec/rgbw_to_albedo.gif" alt="Editor" id="Editor" onClick="SwapSource('Editor', 'TextureTint')">
+                <img src="source/images/spec/final.gif" alt="Everything" id="Final" >
+                <img src="source/images/spec/rgbw_to_albedo.gif" alt="Editor" id="Editor">
                 <h2>
                     Color Customization Tool
                 </h2>
@@ -222,9 +241,9 @@
                     Short Information About: The Game Assembly
                 </h2>
                 <p>
-                    Higher vocational education. 2 years of studies and a ½ year internship.<br>
-                    Studies are a combination of courses for the profession such as programming, art or level design and projects where all
-                    disciplines work together on a video game.
+                    Higher vocational education. 2 years of studies followed by a ½ year internship.<br>
+                    Studies are a combination of courses for the a discipline such as programming, art or level design and projects where all
+                    disciplines work together in various team sizes on video game projects.
                     <a href="https://www.thegameassembly.com/">Link to their webpage (Swedish).</a>
                 </p>
                 <br>
@@ -233,8 +252,8 @@
         </div>
 
         <div class="CFooter">
-            <a href="https://www.linkedin.com/in/aki-gonzalez-389425207"><img src="source/images/linkedin_icon.png" alt="LinkedIn Profile"></a>
-            <a href="https://github.com/Aki-Gonzalez"><img src="source/images/git_icon.png" alt="GitHub Profile"></a>
+            <a href="https://www.linkedin.com/in/aki-gonzalez-389425207"><img src="source/images/linkedin_icon.png" alt="LinkedIn Profile"></a><a id="EmptySpaceAfter"></a>
+            <a href="https://github.com/Aki-Gonzalez"><img src="source/images/git_icon.png" alt="GitHub Profile"></a><a id="EmptySpaceAfter"></a>
         </div>
 
     </body>

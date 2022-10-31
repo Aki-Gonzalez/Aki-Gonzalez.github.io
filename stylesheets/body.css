@@ -83,8 +83,8 @@ h1, h2, h3, h4{
 {
     /* font-weight: bold; */
     /* text-decoration: underline overline; */
-    text-decoration: overline;
-    /* text-decoration: underline; */
+    /* text-decoration: overline; */
+    text-decoration: underline;
 }
 
 .CLinkColorOverride h3{
