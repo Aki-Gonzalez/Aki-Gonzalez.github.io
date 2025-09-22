@@ -14,43 +14,55 @@
 
     <body>
         <div class="CHeaderMain">
-            <h2><a href="index.html">Aki Gonzalez - Game Programmer</a></h2>
+            <h2><a href="index.html">Aki Gonzalez</a><a id="EmptySpaceAfter"></a>
+        </div>
+
+        <div class="CHeader">
+            <a href="https://www.linkedin.com/in/gonzalez-aki/"><img src="source/images/linkedin_icon.png" alt="LinkedIn Profile"></a><a id="EmptySpaceAfter"></a>
+            <a href="https://github.com/Aki-Gonzalez"><img src="source/images/git_icon.png" alt="GitHub Profile"></a><a id="EmptySpaceAfter"></a></h2>
         </div>
 
         <div class="CHeader">
             <a id="BreakLineAfter" href="professionalwork.html">Professional Work</a><a id="EmptySpaceAfter"></a>
             <a id="BreakLineAfter" class="CSelected" href="thegameassembly.html">The Game Assembly</a><a id="EmptySpaceAfter"></a>
-            <a id="BreakLineAfter" href="about.html">About</a><a id="EmptySpaceAfter"></a>
         </div>
         
         <div id="DevicePageContentOverride" class="CPageContent">
 
+            <div id="DeviceSingleDivOverride" class="CCenteredSingleDiv" id="TGAInfo">
+                    <h2>
+                        Overview: The Game Assembly
+                    </h2>
+                    <p>
+                        A higher vocational education. Consisting of 2 years of studies followed by a ½ year internship.<br>
+                        Courses for the discipline such as: programming, art or level design followed by projects where all
+                        disciplines work together in various team sizes to create small games.
+                        <br><a href="https://thegameassembly.com/se/">Link to their webpage (Swedish).</a>
+                    </p>
+            </div>
+
             <div id="DeviceSingleDivOverride" class="CCenteredSingleDiv">
                 <br>
-                <video autoplay loop src="source/images/sp8/menu.mp4" alt="Menus"> </video>
-                <br>
-                <br>
-                <video autoplay loop src="source/images/sp8/grab.mp4" alt="Monster Grab"> </video>
-                <br>
-                <br>
                 <iframe 
-                    width="720" 
-                    height="406"
-                    src="https://www.youtube.com/embed/R9eKjTaD22Y" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow=
-                    "   
-                    accelerometer;
-                    autoplay; 
-                    clipboard-write;
-                    encrypted-media;
-                    gyroscope;
-                    picture-in-picture
-                    " 
-                    allowfullscreen
+                width="720" 
+                height="406"
+                src="https://www.youtube.com/embed/R9eKjTaD22Y" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow=
+                "   
+                accelerometer;
+                autoplay; 
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture
+                " 
+                allowfullscreen
                 >
                 </iframe>
+                <video autoplay loop src="source/images/sp8/grab.mp4" alt="Monster Grab"> </video>
+                <br>
                 <br>
                 <h2>
                     Besöket  - [The Visit]
@@ -60,6 +72,7 @@
                 </h4>
                 <br>
                 <p>
+                    Overview:<br>
                     Besöket (English: The Visit): you respond to a cry of help from your friend, locked in a strange Swedish cottage. 
                     Find a way to free your friend, solve the puzzles all while evading the unknown horrors of the house. 
                     You better be careful, or this act of kindness might be your last.
@@ -67,6 +80,7 @@
                     The final game project of the second year at The Game Assembly.<br>
                     Made in <a href="ironwrought.html">IronWrought</a>, an engine developed by my second year project group.
                     <br><br>
+                    Responsibilities:<br>
                     Mostly a generalist, I had 2 main contributions to the project: logic and behaviour for the UI, menus and dynamic crosshair; and animation programming for the AI 
                     working alongside the animator to make sure the monster moved in ways that respected the space of the game.
                     <br> 
@@ -85,7 +99,6 @@
 
             <div id="DeviceSingleDivOverride" class="CCenteredSingleDiv" id="sp7">
                 <br>
-                <img src="source/images/sp7/glove_animations.gif" id="Glove">
                 <iframe 
                     width="720" 
                     height="406"
@@ -113,11 +126,13 @@
                 </h4>
                 <br>
                 <p>
+                    Overview:<br>
                     You took something you shouldn't have! Use the gravity glove you stole to overcome obstacles and dangerous robots as you seek your freedom. 
                     <br><br>
                     Second game project made in <a href="ironwrought.html">IronWrought</a>, an engine developed by my second year project group.
                     PhysX was added to the engine for this project and we wanted a game that centers around physics.
                     <br><br>
+                    Responsibilities:<br>
                     My role in the project was as a generalist where I contributed to player movement, menus and more.<br>
                     I had full responsibility over the logic behind the HUD for the player: a healthbar and a dynamic crosshair which connected to the gravity glove to emphasize its actions.<br>
                     Wrote an event based Animation State Machine that was used by the player and the AI, which blended between given animations depending on the state of the character.
@@ -125,10 +140,8 @@
                 <br>
             </div>
 
-
             <div id="DeviceSingleDivOverride" class="CCenteredSingleDiv" id="sp6">
                 <br>
-                <img src="source/images/sp6/sp6_quick.gif" alt="Project6"></a>
                 <iframe 
                     width="720" 
                     height="406"
@@ -156,11 +169,13 @@
                 </h4>
                 <br>
                 <p>
+                    Overview:<br>
                     A kingdom nearing ruin! Fight your way to the castle to confront your father, King Ulberic, and find answers to this tragedy.  
                     <br><br>
                     The first game project made in <a href="ironwrought.html">IronWrought</a>, an engine developed by my second year project group. The game and the engine
                     were developed in parallell during the project. 
                     <br><br>
+                    Responsibilities:<br>
                     I made a modelviewer that the artists could use to preview the behaviour of rendering and animations in the engine. It was later expanded to include VFX preview and UI elements.<br>
                     A debug tool for line rendering which was used to visualize colliders and NavMesh. Animation programming for the player and AI.
                     All in all I was an all-round programmer.
@@ -168,10 +183,8 @@
                 <br>
             </div>
 
-
             <div id="DeviceSingleDivOverride" class="CCenteredSingleDiv" id="sp5">
                 <br>
-                <img src="source/images/sp5/door_pressureplate.gif" alt="Door and Pressure plate" id="DoorPressurePlate">
                 <iframe 
                     width="720" 
                     height="406"
@@ -199,20 +212,20 @@
                 </h4>
                 <br>
                 <p>
+                    Overview:<br>
                     Puzzle your way through the ruins of a long gone society and learn their history. 
                     <br><br>
                     The fifth project at The Game Assembly developed in TGA2D, the school's in-house engine.
                     <br><br>
+                    Responsibilities:<br>
                     I had responsibility over gameplay programming for various puzzle pieces, keys and locks, used for the pressure plates and braziers found in the game that were used to unlock doors and gates.
                     I put together the logic for the menus and collaborated on a state stack which I later used to handle the transitions between levels as well as menus. 
                 </p>
                 <br>
             </div>
 
-
             <div id="DeviceSingleDivOverride" class="CCenteredSingleDiv">
                 <br>
-                <img src="source/images/spec/final.gif" alt="Everything" id="Final" >
                 <img src="source/images/spec/rgbw_to_albedo.gif" alt="Editor" id="Editor">
                 <h2>
                     Color Customization Tool
@@ -223,12 +236,12 @@
                 <br>
                 <p>
                     <br>
-                    Tool created during the specialization course at The Game Assembly. <br><br>
+                    Tool created during the specialization course at The Game Assembly. <br>
                     I wanted to build a tool that would allow my project group's level designers to create color variations for certain models, like enemies, which could possibly reduce the workload for the artists.
                     <br>
                     <br>
                     I chose the game Warframe as my reference for the implementation. In Warframe players can tint their warframe with a set of colors, the areas the colors
-                    affect are decided using a tintmap. The tintmap is a small texture where each color channel represents a mask, if the red channel has data on a pixel the desired color will be mixed with color from the albedo map. 
+                    affect are decided using a tintmap. The tintmap is a small texture where each color channel represents a mask, if the red channel has data on a pixel a desired color will be mixed with color from the albedo map. 
                     <br>
                     <br>
                     The tool is in-engine and uses <a href="https://github.com/ocornut/imgui">Dear ImGui</a> for the user interface. A model can be loaded
@@ -236,25 +249,6 @@
                 </p>
             </div>
 
-            <div id="DeviceSingleDivOverride" class="CCenteredSingleDiv" id="TGAInfo">
-                <h2>
-                    Short Information About: The Game Assembly
-                </h2>
-                <p>
-                    Higher vocational education. 2 years of studies followed by a ½ year internship.<br>
-                    Studies are a combination of courses for the a discipline such as programming, art or level design and projects where all
-                    disciplines work together in various team sizes on video game projects.
-                    <a href="https://www.thegameassembly.com/">Link to their webpage (Swedish).</a>
-                </p>
-                <br>
-            </div>
-
         </div>
-
-        <div class="CFooter">
-            <a href="https://www.linkedin.com/in/gonzalez-aki/"><img src="source/images/linkedin_icon.png" alt="LinkedIn Profile"></a><a id="EmptySpaceAfter"></a>
-            <a href="https://github.com/Aki-Gonzalez"><img src="source/images/git_icon.png" alt="GitHub Profile"></a><a id="EmptySpaceAfter"></a>
-        </div>
-
     </body>
 </html>
